@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
 import org.example.studentsystem.DTO.TeacherAddDTO;
+import org.example.studentsystem.DTO.TeacherNamePageRequestDTO;
 import org.example.studentsystem.DTO.TeacherPageRequestDTO;
 import org.example.studentsystem.DTO.TeacherUpdateDTO;
 import org.example.studentsystem.VO.TeacherDetailListVO;
@@ -103,6 +104,29 @@ public class TeacherServiceImpl implements TeacherService {
         PageHelper.startPage(teacherPageRequestDTO.getPageNumber(), teacherPageRequestDTO.getPageSize());
         List<TeacherEntity> teacherEntityList = teacherMapper.listTeachers();
         PageInfo<TeacherEntity> pageInfo = new PageInfo<>(teacherEntityList);
+
+        return new TeacherDetailListVO(
+                pageInfo.getPageSize(),
+                pageInfo.getPageNum(),
+                (int) pageInfo.getTotal(),
+                pageInfo.getList()
+        );
+    }
+
+    @Override
+    public TeacherDetailListVO searchTeacherPageList(TeacherNamePageRequestDTO requestDTO) {
+        if (requestDTO.getName() == null || requestDTO.getName().isBlank()) {
+            return new TeacherDetailListVO(
+                    requestDTO.getPageSize(),
+                    requestDTO.getPageNumber(),
+                    0,
+                    List.of()
+            );
+        }
+
+        PageHelper.startPage(requestDTO.getPageNumber(), requestDTO.getPageSize());
+        List<TeacherEntity> list = teacherMapper.listTeachersByNameLike(requestDTO.getName().trim());
+        PageInfo<TeacherEntity> pageInfo = new PageInfo<>(list);
 
         return new TeacherDetailListVO(
                 pageInfo.getPageSize(),

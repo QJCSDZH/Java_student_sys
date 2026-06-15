@@ -1,6 +1,7 @@
 package org.example.studentsystem.service;
 
 import org.example.studentsystem.DTO.TeacherAddDTO;
+import org.example.studentsystem.DTO.TeacherNamePageRequestDTO;
 import org.example.studentsystem.DTO.TeacherPageRequestDTO;
 import org.example.studentsystem.DTO.TeacherUpdateDTO;
 import org.example.studentsystem.VO.TeacherDetailListVO;
@@ -19,5 +20,7 @@ public interface TeacherService {
                                        @RequestParam Integer years);
     // 使用 PageHelper 分页查询 teacher 表
     TeacherDetailListVO getTeacherPageList(TeacherPageRequestDTO teacherPageRequestDTO);
+
+    TeacherDetailListVO searchTeacherPageList(TeacherNamePageRequestDTO requestDTO);
 
 }

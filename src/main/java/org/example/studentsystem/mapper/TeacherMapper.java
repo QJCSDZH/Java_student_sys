@@ -61,7 +61,16 @@ public interface TeacherMapper {
     public TeacherEntity getTeacherByName(String name);
 
 
+    // 通过名字模糊查询（配合 PageHelper 分页）
+    @Select("""
+            select * from teacher
+            where name like concat('%', #{name}, '%')
+            order by id
+            """)
+    List<TeacherEntity> listTeachersByNameLike(String name);
+
+
     // 查询全部教师（配合 PageHelper 分页）
     @Select("select * from teacher order by id")
-    List<TeacherEntity> listTeachers();
+    public List<TeacherEntity> listTeachers();
 }

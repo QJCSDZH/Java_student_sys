@@ -3,6 +3,7 @@ package org.example.studentsystem.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.studentsystem.DTO.TeacherAddDTO;
+import org.example.studentsystem.DTO.TeacherNamePageRequestDTO;
 import org.example.studentsystem.DTO.TeacherUpdateDTO;
 import org.example.studentsystem.DTO.TeacherPageRequestDTO;
 import org.example.studentsystem.VO.TeacherDetailListVO;
@@ -98,5 +99,13 @@ public class TeacherController {
     public PHResult<TeacherDetailListVO> getTeacherPageList(@Valid @RequestBody TeacherPageRequestDTO teacherPageRequestDTO) {
         TeacherDetailListVO teacherDetailListVO = teacherService.getTeacherPageList(teacherPageRequestDTO);
         return PHResult.success(teacherDetailListVO);
+    }
+
+    // http://127.0.0.1:8081/teacher/searchTeacherPageList
+    @OperationLog("通过姓名模糊分页查询教师信息")
+    @PostMapping("searchTeacherPageList")
+    public PHResult<TeacherDetailListVO> searchTeacherPageList(
+            @Valid @RequestBody TeacherNamePageRequestDTO requestDTO) {
+        return PHResult.success(teacherService.searchTeacherPageList(requestDTO));
     }
 }
