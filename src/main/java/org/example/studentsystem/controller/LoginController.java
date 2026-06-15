@@ -32,4 +32,5 @@ public class LoginController {
         String token = loginService.login(loginDTO);
         return PHResult.success(token);
     }
+
 }
