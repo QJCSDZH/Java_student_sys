@@ -45,18 +45,12 @@ public interface TeacherMapper {
     // 修改数据
     @Update("""
             update teacher
-    
             set
-    Ï
             name = #{name},
-    
             age = #{age},
-    
-            years = #{years}Ï
-    
+            years = #{years}
             where id = #{id}
-    
-    """)
+            """)
     public int updateTeacherInfo(TeacherUpdateDTO teacherUpdateDTO);
 
 
@@ -67,14 +61,7 @@ public interface TeacherMapper {
     public TeacherEntity getTeacherByName(String name);
 
 
-    // 分页查询
-    @Select("""
-            select * from teacher 
-            limit #{offset}, #{pageSize}
-            """)
-    public List<TeacherEntity> getTeacherByPage(@Param("offset") int offset, @Param("pageSize") int pageSize);
-
-    // 查询teacher表的总条数
-    @Select( "select count(*) from teacher" )
-    public int getTeacherInfoTotal();
+    // 查询全部教师（配合 PageHelper 分页）
+    @Select("select * from teacher order by id")
+    List<TeacherEntity> listTeachers();
 }

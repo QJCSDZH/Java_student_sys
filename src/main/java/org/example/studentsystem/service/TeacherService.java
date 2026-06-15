@@ -1,7 +1,5 @@
 package org.example.studentsystem.service;
 
-import jakarta.validation.Valid;
-import org.apache.ibatis.annotations.Param;
 import org.example.studentsystem.DTO.TeacherAddDTO;
 import org.example.studentsystem.DTO.TeacherPageRequestDTO;
 import org.example.studentsystem.DTO.TeacherUpdateDTO;
@@ -19,8 +17,7 @@ public interface TeacherService {
                                        @RequestParam Integer age,
                                        @RequestParam String name,
                                        @RequestParam Integer years);
-    // 查询teacher表总条数
-    //Integer getTeacherInfoTotal();
-    // 分页查询teacher表list
-    TeacherDetailListVO getTeacherByPage(@Param("teacherPageRequestDTO") TeacherPageRequestDTO teacherPageRequestDTO);
+    // 使用 PageHelper 分页查询 teacher 表
+    TeacherDetailListVO getTeacherPageList(TeacherPageRequestDTO teacherPageRequestDTO);
+
 }

@@ -1,12 +1,13 @@
 package org.example.studentsystem.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
 import org.example.studentsystem.DTO.TeacherAddDTO;
 import org.example.studentsystem.DTO.TeacherPageRequestDTO;
 import org.example.studentsystem.DTO.TeacherUpdateDTO;
 import org.example.studentsystem.VO.TeacherDetailListVO;
 import org.example.studentsystem.VO.TeacherDetailVO;
-import org.example.studentsystem.common.context.BaseContext;
 import org.example.studentsystem.common.exception.BusinessException;
 import org.example.studentsystem.entity.Student;
 import org.example.studentsystem.entity.TeacherEntity;
@@ -96,23 +97,19 @@ public class TeacherServiceImpl implements TeacherService {
         return teacherDetailVO;
     }
 
-    // 查询教师表总条数
-//    public Integer getTeacherInfoTotal() {
-//        return teacherMapper.getTeacherInfoTotal();
-//    }
+    // 使用 PageHelper 分页查询教师表
+    @Override
+    public TeacherDetailListVO getTeacherPageList(TeacherPageRequestDTO teacherPageRequestDTO) {
+        PageHelper.startPage(teacherPageRequestDTO.getPageNumber(), teacherPageRequestDTO.getPageSize());
+        List<TeacherEntity> teacherEntityList = teacherMapper.listTeachers();
+        PageInfo<TeacherEntity> pageInfo = new PageInfo<>(teacherEntityList);
 
-    // 分页查询教师表list
-    public TeacherDetailListVO getTeacherByPage(TeacherPageRequestDTO teacherPageRequestDTO) {
-
-        Integer total = teacherMapper.getTeacherInfoTotal();
-
-        List<TeacherEntity> teacherEntityList = teacherMapper.getTeacherByPage(teacherPageRequestDTO.getOffset(), teacherPageRequestDTO.getPageSize());
-
-        System.out.println("========================sever中获取userId=================================");
-        Long userId_baseContext = BaseContext.getUserId();
-        System.out.println("baseContext用法:" + userId_baseContext);
-
-        return  new TeacherDetailListVO(teacherPageRequestDTO.getPageSize(),  teacherPageRequestDTO.getPageNumber(), total, teacherEntityList);
+        return new TeacherDetailListVO(
+                pageInfo.getPageSize(),
+                pageInfo.getPageNum(),
+                (int) pageInfo.getTotal(),
+                pageInfo.getList()
+        );
     }
 
 }
