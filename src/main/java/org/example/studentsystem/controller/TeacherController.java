@@ -1,24 +1,18 @@
 package org.example.studentsystem.controller;
 
-
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.annotations.Param;
 import org.example.studentsystem.DTO.TeacherAddDTO;
+import org.example.studentsystem.DTO.TeacherNamePageRequestDTO;
 import org.example.studentsystem.DTO.TeacherUpdateDTO;
 import org.example.studentsystem.DTO.TeacherPageRequestDTO;
 import org.example.studentsystem.VO.TeacherDetailListVO;
 import org.example.studentsystem.VO.TeacherDetailVO;
 import org.example.studentsystem.common.PHResult;
 import org.example.studentsystem.common.annotation.OperationLog;
-import org.example.studentsystem.common.context.BaseContext;
-import org.example.studentsystem.common.exception.BusinessException;
 import org.example.studentsystem.entity.TeacherEntity;
 import org.example.studentsystem.service.TeacherService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -51,6 +45,7 @@ public class TeacherController {
             return PHResult.fail("请求失败");
         }
     }
+    
 
     // json模式
     // http://127.0.0.1:8081/teacher/updateTeacherData
@@ -98,18 +93,20 @@ public class TeacherController {
     }
 
 
-    // 获取教师list
-    // http://127.0.0.1:8081/teacher/getTeacherList
-    @OperationLog("分页查询教师列表")
-    @PostMapping("getTeacherList")
-    public PHResult<TeacherDetailListVO> getTeacherList(@Valid @RequestBody TeacherPageRequestDTO teacherListDTO) {
-
-        TeacherDetailListVO teacherDetailListVO = teacherService.getTeacherByPage(teacherListDTO);
-
-        System.out.println("========================userId=================================");
-        Long userId_baseContext = BaseContext.getUserId();
-        System.out.println("baseContext用法:" + userId_baseContext);
-
+    // 使用 PageHelper 分页查询教师列表
+    // http://127.0.0.1:8081/teacher/getTeacherPageList
+    @OperationLog("分页查询教师列表(PageHelper)")
+    @PostMapping("getTeacherPageList")
+    public PHResult<TeacherDetailListVO> getTeacherPageList(@Valid @RequestBody TeacherPageRequestDTO teacherPageRequestDTO) {
+        TeacherDetailListVO teacherDetailListVO = teacherService.getTeacherPageList(teacherPageRequestDTO);
         return PHResult.success(teacherDetailListVO);
+    }
+
+    // http://127.0.0.1:8081/teacher/searchTeacherPageList
+    @OperationLog("通过姓名模糊分页查询教师信息")
+    @PostMapping("searchTeacherPageList")
+    public PHResult<TeacherDetailListVO> searchTeacherPageList(
+            @Valid @RequestBody TeacherNamePageRequestDTO requestDTO) {
+        return PHResult.success(teacherService.searchTeacherPageList(requestDTO));
     }
 }

@@ -5,11 +5,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.studentsystem.common.context.BaseContext;
 import org.example.studentsystem.common.exception.BusinessException;
+import org.example.studentsystem.service.RedisService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 @Component
 public class AuthInterceptor implements HandlerInterceptor {
+
+    @Autowired
+    private RedisService redisService;
 
     @Override
     public boolean preHandle(HttpServletRequest request,
@@ -18,15 +23,17 @@ public class AuthInterceptor implements HandlerInterceptor {
 
         String header = request.getHeader("Authorization");
 
+        // 1. token不存在
         if (header == null || header.isEmpty()) {
             throw new BusinessException("未登录");
         }
 
+        // 2. 格式校验
         if (!header.startsWith("Bearer ")) {
             throw new BusinessException("token格式错误");
         }
 
-        String token = header.substring(7);
+        String token = header.substring("Bearer ".length());
 
         try {
             // 解析token
@@ -37,14 +44,27 @@ public class AuthInterceptor implements HandlerInterceptor {
             request.setAttribute("userId", userId_request);
             */
 
+            // 3. 解析JWT
             // 常规用法,给BaseContext填数据
             Claims claims = JwtUtil.getClaims(token);
 
-            BaseContext.setUserId(Long.valueOf(claims.getSubject()));
-            BaseContext.setUserName(claims.get("userName", String.class));
+            String userId = claims.getSubject();
+            String userName = claims.get("userName", String.class);
+
+
+            // 4. 🔥 Redis校验（关键新增）
+            String redisKey = "login:token:" + token;
+            String redisValue = redisService.getToken(token);
+            if (redisValue == null) {
+                throw new BusinessException("登录已过期或已被踢下线");
+            }
+
+            // 5. 写入ThreadLocal
+            BaseContext.setUserId(Long.valueOf(userId));
+            BaseContext.setUserName(userName);
 
         } catch (Exception e) {
-            throw new RuntimeException("token无效或已过期");
+            throw new BusinessException("token无效或已过期");
         }
 
         return true;
@@ -63,9 +83,15 @@ public class AuthInterceptor implements HandlerInterceptor {
 
                                 Exception ex) {
 
-        BaseContext.remove();
+        try {
 
-        System.out.println("ThreadLocal已清理");
+            BaseContext.remove();
+
+        } finally {
+
+            System.out.println("ThreadLocal已清理");
+
+        }
 
     }
 
