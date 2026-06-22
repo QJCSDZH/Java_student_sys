@@ -27,6 +27,7 @@ public class StudentController {
     // region 查询学生
 
     // http://127.0.0.1:8081/student/1001
+    @OperationLog("根据ID查询学生信息")
     @GetMapping("/student/{id}")
     public PHResult<Student> getStudent(@PathVariable Integer id) {
         Student student = studentMapper.getStudentById(id);
