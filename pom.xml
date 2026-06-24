@@ -110,6 +110,12 @@
         </dependency>
 
 
+        <!-- jackson 对象序列化/反序列化工具 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
 
 
     </dependencies>

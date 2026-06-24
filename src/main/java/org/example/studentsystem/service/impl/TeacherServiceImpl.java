@@ -15,17 +15,24 @@ import org.example.studentsystem.entity.TeacherEntity;
 import org.example.studentsystem.mapper.StudentMapper;
 import org.example.studentsystem.mapper.TeacherMapper;
 import org.example.studentsystem.service.TeacherService;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tools.jackson.databind.ObjectMapper;
 
+import java.time.Duration;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class TeacherServiceImpl implements TeacherService {
 
-    final TeacherMapper teacherMapper;
-    final StudentMapper studentMapper;
+    private final TeacherMapper teacherMapper;
+    private final StudentMapper studentMapper;
+
+    private final StringRedisTemplate stringRedisTemplate;
+    private final ObjectMapper objectMapper;
 
     /*
     public  TeacherServiceImpl(TeacherMapper teacherMapper, StudentMapper studentMapper) {
@@ -38,11 +45,25 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
 
     public TeacherEntity getTeacherInfoById(Integer id) {
-        return teacherMapper.getTeacherById(id);
+
+        String key = "teacher:" + id;
+        String cacheJson = stringRedisTemplate.opsForValue().get(key);
+        if (cacheJson != null) {
+            System.out.println("命中Redis");
+            return objectMapper.readValue(cacheJson, TeacherEntity.class);
+        }else{
+            System.out.println("==========查询MySQL==========");
+            TeacherEntity teacher = teacherMapper.getTeacherById(id);
+            String json = objectMapper.writeValueAsString(teacher); // json序列化
+            stringRedisTemplate.opsForValue().set(key, json, Duration.ofMinutes(30)); // 30分钟过期
+            return teacher;
+        }
+
+        // return teacherMapper.getTeacherById(id);
     }
 
 
-    // 事务控制
+    // Spring 声明式事务控制
     @Transactional(rollbackFor = Exception.class)
     public boolean insertTeacherInfo(TeacherAddDTO teacherAddDTO) {
 
@@ -61,7 +82,15 @@ public class TeacherServiceImpl implements TeacherService {
 
 
     public boolean updateTeacherInfo(TeacherUpdateDTO teacherUpdateDTO) {
-        Integer result = teacherMapper.updateTeacherInfo(teacherUpdateDTO);
+        int result = teacherMapper.updateTeacherInfo(teacherUpdateDTO);
+        if (result == 1) {
+            Boolean success = stringRedisTemplate.delete("teacher:" + teacherUpdateDTO.getId());
+            if (success) {
+                System.out.println("==========Redis删除成功==========");
+            }else{
+                System.out.println("==========Redis删除失败==========");
+            }
+        }
         return result == 1;
     }
 
