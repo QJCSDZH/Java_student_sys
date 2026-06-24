@@ -82,7 +82,7 @@ public class TeacherController {
 
 
     // http://127.0.0.1:8081/teacher/teacherDetail/1001
-    @GetMapping("/teacherDetail/{id}")
+    @GetMapping("/teacherDetail/{id}") // 自定义注解 + AOP 实现统一操作日志
     public PHResult<TeacherDetailVO> getTeacherDetail(@PathVariable Integer id) {
 
         TeacherDetailVO result = teacherService.getTeacherDetailById(id);
