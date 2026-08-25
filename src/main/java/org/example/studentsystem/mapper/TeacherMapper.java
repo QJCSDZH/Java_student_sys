@@ -1,76 +1,18 @@
 package org.example.studentsystem.mapper;
 
-import org.apache.ibatis.annotations.*;
-import org.example.studentsystem.DTO.TeacherAddDTO;
-import org.example.studentsystem.DTO.TeacherUpdateDTO;
-import org.example.studentsystem.entity.TeacherEntity;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.example.studentsystem.entity.Teacher;
 
 import java.util.List;
 
 @Mapper
 public interface TeacherMapper {
-    // 查询数据
-    @Select("select * from teacher where id = #{id}")
-    public TeacherEntity getTeacherById(int id);
-
-    // 新增数据
-    @Insert("""
-
-    insert into teacher( name, age, years)
-
-    values(#{name}, #{age}, #{years})
-    
-    """)
-    public int insertTeacherInfo(TeacherAddDTO teacher);
-
-
-    // 修改数据
-    @Update("""
-            update teacher
-    
-            set
-    
-            name = #{name},
-    
-            age = #{age},
-    
-            years = #{years}
-    
-            where id = #{id}
-    
-    """)
-    public int updateTeacherInfoWithParam(TeacherEntity teacher);
-
-
-    // 修改数据
-    @Update("""
-            update teacher
-            set
-            name = #{name},
-            age = #{age},
-            years = #{years}
-            where id = #{id}
-            """)
-    public int updateTeacherInfo(TeacherUpdateDTO teacherUpdateDTO);
-
-
-    // 通过名字查找
     @Select("""
-            select * from teacher where name = #{name}
+            SELECT id, name, age, gender
+            FROM teacher
+            WHERE name = #{name}
+            ORDER BY id
             """)
-    public TeacherEntity getTeacherByName(String name);
-
-
-    // 通过名字模糊查询（配合 PageHelper 分页）
-    @Select("""
-            select * from teacher
-            where name like concat('%', #{name}, '%')
-            order by id
-            """)
-    List<TeacherEntity> listTeachersByNameLike(String name);
-
-
-    // 查询全部教师（配合 PageHelper 分页）
-    @Select("select * from teacher order by id")
-    public List<TeacherEntity> listTeachers();
+    List<Teacher> listByName(String name);
 }
