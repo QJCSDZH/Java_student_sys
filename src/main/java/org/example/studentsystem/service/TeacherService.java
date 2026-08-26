@@ -4,5 +4,5 @@ import org.example.studentsystem.entity.Teacher;
 import java.util.List;
 
 public interface TeacherService {
-    List<Teacher> getTeachersByName(String name);
+    List<Teacher> getTeachersWithStudentsByName(String name);
 }

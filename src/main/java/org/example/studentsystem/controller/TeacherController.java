@@ -20,8 +20,7 @@ public class TeacherController {
 
     // http://127.0.0.1:8081/teacher/info?name=教师1001
     @GetMapping("info")
-    public PHResult<List<Teacher>> getTeachersByName(@RequestParam String name){
-        List<Teacher> teachers = teacherService.getTeachersByName(name);
-        return PHResult.success(teachers);
+    public PHResult<List<Teacher>> getTeachersByName(@RequestParam String name) {
+        return PHResult.success(teacherService.getTeachersWithStudentsByName(name));
     }
 }

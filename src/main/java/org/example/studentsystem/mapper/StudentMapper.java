@@ -16,4 +16,12 @@ public interface StudentMapper {
             ORDER BY id
             """)
     List<Student> listByName(String name);
+
+    @Select("""
+            SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId
+            FROM student
+            WHERE teacher_id = #{teacherId}
+            ORDER BY id
+            """)
+    List<Student> listByTeacherId(Integer teacherId);
 }
