@@ -28,7 +28,7 @@ public interface TeacherMapper {
             WHERE id = #{id}
             ORDER BY id
             """)
-    List<Teacher> listById(Integer id);
+    Teacher listById(Integer id);
 
 
     /// 插入教师信息

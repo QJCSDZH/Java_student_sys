@@ -16,23 +16,24 @@ import java.util.List;
 public class TeacherController {
     private final TeacherService teacherService;
 
-    // 联表查询教师及学生信息
+    // 根据教师姓名联表查询教师及学生信息
     // http://127.0.0.1:8081/teacher/info?name=教师1001
     @GetMapping("info")
     public PHResult<List<Teacher>> getTeachersByName(@RequestParam String name) {
         return PHResult.success(teacherService.getTeachersInfoByName(name));
     }
 
+    // 根据教师ID联表查询教师及学生信息
+    @GetMapping("infoById")
+    // http://127.0.0.1:8081/teacher/infoById?id=1001
+    public PHResult<Teacher> getTeacherInfoById(@RequestParam Integer id) {
+        return PHResult.success(teacherService.getTeacherInfoById(id));
+    }
+
     // 插入教师信息
     // http://127.0.0.1:8081/teacher/insert
     @PostMapping("insert")
     public PHResult<Boolean> insertTeacher(@RequestBody TeacherDTO teacherDTO) {
-
-        List<Teacher> teachers = teacherService.getTeachersInfoById(teacherDTO.getId());
-        if (!teachers.isEmpty()) {
-            return  PHResult.fail("该教师已存在");
-        }
-
         return PHResult.success(teacherService.insertTeacherInfo(teacherDTO));
     }
 

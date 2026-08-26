@@ -2,6 +2,7 @@ package org.example.studentsystem.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.example.studentsystem.DTO.TeacherDTO;
+import org.example.studentsystem.common.BusinessException;
 import org.example.studentsystem.entity.Student;
 import org.example.studentsystem.entity.Teacher;
 import org.example.studentsystem.mapper.StudentMapper;
@@ -28,14 +29,28 @@ public class TeacherServiceImpl implements TeacherService {
         return teachers;
     }
 
+
+
     @Override
-    public List<Teacher> getTeachersInfoById(Integer id) {
-        List<Teacher> teachers = teacherMapper.listById(id);
-        return teachers;
+    public Teacher getTeacherInfoById(Integer id) {
+        Teacher teacher = teacherMapper.listById(id);
+        List<Student> students = studentMapper.listByTeacherId(teacher.getId());
+        teacher.setStudents(students);
+        return teacher;
     }
+
+
 
     @Override
     public Boolean insertTeacherInfo(TeacherDTO teacherDTO) {
-        return teacherMapper.insertTeacherInfo(teacherDTO) > 0;
+        Teacher teacher = teacherMapper.listById(teacherDTO.getId());
+        if (teacher != null) {
+            throw new BusinessException("该教师已存在");
+        }
+        boolean success = teacherMapper.insertTeacherInfo(teacherDTO) > 0;
+        if (!success) {
+            throw new BusinessException("教师信息添加失败");
+        }
+        return true;
     }
 }

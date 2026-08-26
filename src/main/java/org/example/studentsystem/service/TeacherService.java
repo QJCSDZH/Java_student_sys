@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TeacherService {
     List<Teacher> getTeachersInfoByName(String name);
-    List<Teacher> getTeachersInfoById(Integer id);
+    Teacher getTeacherInfoById(Integer id);
 
     Boolean insertTeacherInfo(TeacherDTO teacherDTO);
 }
