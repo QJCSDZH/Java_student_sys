@@ -1,6 +1,7 @@
 package org.example.studentsystem.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.example.studentsystem.DTO.TeacherDTO;
 import org.example.studentsystem.entity.Student;
 import org.example.studentsystem.entity.Teacher;
 import org.example.studentsystem.mapper.StudentMapper;
@@ -25,5 +26,10 @@ public class TeacherServiceImpl implements TeacherService {
             teacher.setStudents(students);
         }
         return teachers;
+    }
+
+    @Override
+    public Boolean insertTeacherInfo(TeacherDTO teacherDTO) {
+        return teacherMapper.insertTeacherInfo(teacherDTO) > 0;
     }
 }

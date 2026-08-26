@@ -1,13 +1,11 @@
 package org.example.studentsystem.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.studentsystem.DTO.TeacherDTO;
 import org.example.studentsystem.common.PHResult;
 import org.example.studentsystem.entity.Teacher;
 import org.example.studentsystem.service.TeacherService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,9 +16,18 @@ import java.util.List;
 public class TeacherController {
     private final TeacherService teacherService;
 
+    // 联表查询教师及学生信息
     // http://127.0.0.1:8081/teacher/info?name=教师1001
     @GetMapping("info")
     public PHResult<List<Teacher>> getTeachersByName(@RequestParam String name) {
         return PHResult.success(teacherService.getTeachersWithStudentsByName(name));
     }
+
+    // 插入教师信息
+    // http://127.0.0.1:8081/teacher/insert
+    @PostMapping("insert")
+    public PHResult<Boolean> insertTeacher(@RequestBody TeacherDTO teacherDTO) {
+        return PHResult.success(teacherService.insertTeacherInfo(teacherDTO));
+    }
+
 }
