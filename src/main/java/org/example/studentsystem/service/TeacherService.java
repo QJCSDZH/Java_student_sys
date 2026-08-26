@@ -5,7 +5,8 @@ import org.example.studentsystem.entity.Teacher;
 import java.util.List;
 
 public interface TeacherService {
-    List<Teacher> getTeachersWithStudentsByName(String name);
+    List<Teacher> getTeachersInfoByName(String name);
+    List<Teacher> getTeachersInfoById(Integer id);
 
     Boolean insertTeacherInfo(TeacherDTO teacherDTO);
 }

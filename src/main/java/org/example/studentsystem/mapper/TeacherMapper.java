@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 
 public interface TeacherMapper {
-    /// 查询教师信息
+    /// 根据姓名查询教师信息
     @Select("""
             SELECT id, name, age, gender
             FROM teacher
@@ -19,6 +19,16 @@ public interface TeacherMapper {
             ORDER BY id
             """)
     List<Teacher> listByName(String name);
+
+
+    /// 根据ID查询教师信息
+    @Select("""
+            SELECT id, name, age, gender
+            FROM teacher
+            WHERE id = #{id}
+            ORDER BY id
+            """)
+    List<Teacher> listById(Integer id);
 
 
     /// 插入教师信息

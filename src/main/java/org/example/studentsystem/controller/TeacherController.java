@@ -20,13 +20,19 @@ public class TeacherController {
     // http://127.0.0.1:8081/teacher/info?name=教师1001
     @GetMapping("info")
     public PHResult<List<Teacher>> getTeachersByName(@RequestParam String name) {
-        return PHResult.success(teacherService.getTeachersWithStudentsByName(name));
+        return PHResult.success(teacherService.getTeachersInfoByName(name));
     }
 
     // 插入教师信息
     // http://127.0.0.1:8081/teacher/insert
     @PostMapping("insert")
     public PHResult<Boolean> insertTeacher(@RequestBody TeacherDTO teacherDTO) {
+
+        List<Teacher> teachers = teacherService.getTeachersInfoById(teacherDTO.getId());
+        if (!teachers.isEmpty()) {
+            return  PHResult.fail("该教师已存在");
+        }
+
         return PHResult.success(teacherService.insertTeacherInfo(teacherDTO));
     }
 

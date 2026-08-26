@@ -19,12 +19,18 @@ public class TeacherServiceImpl implements TeacherService {
     private final StudentMapper studentMapper;
 
     @Override
-    public List<Teacher> getTeachersWithStudentsByName(String name) {
+    public List<Teacher> getTeachersInfoByName(String name) {
         List<Teacher> teachers = teacherMapper.listByName(name);
         for (Teacher teacher : teachers) {
             List<Student> students = studentMapper.listByTeacherId(teacher.getId());
             teacher.setStudents(students);
         }
+        return teachers;
+    }
+
+    @Override
+    public List<Teacher> getTeachersInfoById(Integer id) {
+        List<Teacher> teachers = teacherMapper.listById(id);
         return teachers;
     }
 
