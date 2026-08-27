@@ -1,7 +1,10 @@
 package org.example.studentsystem.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.RequiredArgsConstructor;
 import org.example.studentsystem.DTO.TeacherDTO;
+import org.example.studentsystem.DTO.TeacherDetailDTO;
 import org.example.studentsystem.common.BusinessException;
 import org.example.studentsystem.entity.Student;
 import org.example.studentsystem.entity.Teacher;
@@ -32,11 +35,28 @@ public class TeacherServiceImpl implements TeacherService {
 
 
     @Override
-    public Teacher getTeacherInfoById(Integer id) {
+    public TeacherDetailDTO getTeacherInfoById(Integer id, int pageNum, int pageSize) {
         Teacher teacher = teacherMapper.listById(id);
+        if (teacher == null) {
+            throw new BusinessException("教师不存在");
+        }
+
+        PageHelper.startPage(pageNum, pageSize);
         List<Student> students = studentMapper.listByTeacherId(teacher.getId());
-        teacher.setStudents(students);
-        return teacher;
+        PageInfo<Student> pageInfo = new PageInfo<>(students);
+
+        TeacherDetailDTO dto = new TeacherDetailDTO();
+        dto.setId(teacher.getId());
+        dto.setName(teacher.getName());
+        dto.setGender(teacher.getGender());
+        dto.setAge(teacher.getAge());
+
+        dto.setStudents(pageInfo.getList());
+        dto.setTotal(pageInfo.getTotal());
+        dto.setPageNum(pageInfo.getPageNum());
+        dto.setPageSize(pageInfo.getPageSize());
+        dto.setPages(pageInfo.getPages());
+        return dto;
     }
 
 

@@ -2,6 +2,7 @@ package org.example.studentsystem.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.studentsystem.DTO.TeacherDTO;
+import org.example.studentsystem.DTO.TeacherDetailDTO;
 import org.example.studentsystem.common.PHResult;
 import org.example.studentsystem.entity.Teacher;
 import org.example.studentsystem.service.TeacherService;
@@ -23,11 +24,14 @@ public class TeacherController {
         return PHResult.success(teacherService.getTeachersInfoByName(name));
     }
 
-    // 根据教师ID联表查询教师及学生信息
+    // 根据教师ID联表查询教师及学生信息（学生列表分页）
     @GetMapping("infoById")
-    // http://127.0.0.1:8081/teacher/infoById?id=1001
-    public PHResult<Teacher> getTeacherInfoById(@RequestParam Integer id) {
-        return PHResult.success(teacherService.getTeacherInfoById(id));
+    // http://127.0.0.1:8081/teacher/infoById?id=1001&pageNum=1&pageSize=10
+    public PHResult<TeacherDetailDTO> getTeacherInfoById(
+            @RequestParam Integer id,
+            @RequestParam(defaultValue = "1") int pageNum,
+            @RequestParam(defaultValue = "10") int pageSize) {
+        return PHResult.success(teacherService.getTeacherInfoById(id, pageNum, pageSize));
     }
 
     // 插入教师信息
