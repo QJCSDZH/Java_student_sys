@@ -3,6 +3,7 @@ package org.example.studentsystem.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.studentsystem.DTO.TeacherDTO;
 import org.example.studentsystem.DTO.TeacherDetailDTO;
+import org.example.studentsystem.annotation.OperationLog;
 import org.example.studentsystem.common.PHResult;
 import org.example.studentsystem.entity.Teacher;
 import org.example.studentsystem.service.TeacherService;
@@ -36,6 +37,7 @@ public class TeacherController {
 
     // 插入教师信息
     // http://127.0.0.1:8081/teacher/insert
+    @OperationLog(module = "teacher", operation = "INSERT", description = "新增教师")
     @PostMapping("insert")
     public PHResult<Boolean> insertTeacher(@RequestBody TeacherDTO teacherDTO) {
         return PHResult.success(teacherService.insertTeacherInfo(teacherDTO));

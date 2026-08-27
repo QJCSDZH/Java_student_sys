@@ -763,3 +763,1513 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required r
 }
 ══════════════════════════════════════════════════════════════
 
+2026-08-27 14:31:23.113 [http-nio-8081-exec-3] [427c6708cbb04243] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=1001&pageNum=3&pageSize=10
+    traceId : 427c6708cbb04243
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.56.1",
+  "Accept" : "*/*",
+  "Postman-Token" : "255f4540-bdc6-4415-90b1-bdf9db9aff42",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ 1001, 3, 10 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:31:23.115 [http-nio-8081-exec-3] [427c6708cbb04243] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById
+        args :
+    [ 1001, 3, 10 ]
+
+2026-08-27 14:31:23.117 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 14:31:23.118 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 14:31:23.136 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 14:31:23.142 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 14:31:23.143 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 14:31:23.148 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 14:31:23.148 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-08-27 14:31:23.149 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1001(Integer), 20(Long), 10(Integer)
+2026-08-27 14:31:23.155 [http-nio-8081-exec-3] [427c6708cbb04243] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 10
+2026-08-27 14:31:23.156 [http-nio-8081-exec-3] [427c6708cbb04243] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 40ms
+        result :
+    {
+  "id" : 1001,
+  "name" : "教师1001",
+  "gender" : "女",
+  "age" : 30,
+  "students" : [ {
+    "id" : 1020,
+    "name" : "张1020",
+    "age" : 14,
+    "gender" : "男",
+    "chinese" : 44,
+    "math" : 17,
+    "english" : 56,
+    "teacherId" : 1001
+  }, {
+    "id" : 1021,
+    "name" : "张1021",
+    "age" : 5,
+    "gender" : "女",
+    "chinese" : 47,
+    "math" : 40,
+    "english" : 60,
+    "teacherId" : 1001
+  }, {
+    "id" : 1022,
+    "name" : "张1022",
+    "age" : 15,
+    "gender" : "男",
+    "chinese" : 27,
+    "math" : 97,
+    "english" : 3,
+    "teacherId" : 1001
+  }, {
+    "id" : 1023,
+    "name" : "张1023",
+    "age" : 5,
+    "gender" : "男",
+    "chinese" : 12,
+    "math" : 10,
+    "english" : 13,
+    "teacherId" : 1001
+  }, {
+    "id" : 1024,
+    "name" : "张1024",
+    "age" : 7,
+    "gender" : "男",
+    "chinese" : 14,
+    "math" : 35,
+    "english" : 34,
+    "teacherId" : 1001
+  }, {
+    "id" : 1025,
+    "name" : "张1025",
+    "age" : 12,
+    "gender" : "男",
+    "chinese" : 29,
+    "math" : 70,
+    "english" : 60,
+    "teacherId" : 1001
+  }, {
+    "id" : 1026,
+    "name" : "张1026",
+    "age" : 17,
+    "gender" : "女",
+    "chinese" : 33,
+    "math" : 19,
+    "english" : 95,
+    "teacherId" : 1001
+  }, {
+    "id" : 1027,
+    "name" : "张1027",
+    "age" : 4,
+    "gender" : "男",
+    "chinese" : 85,
+    "math" : 97,
+    "english" : 31,
+    "teacherId" : 1001
+  }, {
+    "id" : 1028,
+    "name" : "张1028",
+    "age" : 13,
+    "gender" : "男",
+    "chinese" : 17,
+    "math" : 53,
+    "english" : 12,
+    "teacherId" : 1001
+  }, {
+    "id" : 1029,
+    "name" : "张1029",
+    "age" : 1,
+    "gender" : "女",
+    "chinese" : 2,
+    "math" : 65,
+    "english" : 14,
+    "teacherId" : 1001
+  } ],
+  "total" : 30,
+  "pageNum" : 3,
+  "pageSize" : 10,
+  "pages" : 3
+}
+
+2026-08-27 14:31:23.157 [http-nio-8081-exec-3] [427c6708cbb04243] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 46ms
+    result :
+{
+  "code" : 200,
+  "message" : "success",
+  "content" : {
+    "id" : 1001,
+    "name" : "教师1001",
+    "gender" : "女",
+    "age" : 30,
+    "students" : [ {
+      "id" : 1020,
+      "name" : "张1020",
+      "age" : 14,
+      "gender" : "男",
+      "chinese" : 44,
+      "math" : 17,
+      "english" : 56,
+      "teacherId" : 1001
+    }, {
+      "id" : 1021,
+      "name" : "张1021",
+      "age" : 5,
+      "gender" : "女",
+      "chinese" : 47,
+      "math" : 40,
+      "english" : 60,
+      "teacherId" : 1001
+    }, {
+      "id" : 1022,
+      "name" : "张1022",
+      "age" : 15,
+      "gender" : "男",
+      "chinese" : 27,
+      "math" : 97,
+      "english" : 3,
+      "teacherId" : 1001
+    }, {
+      "id" : 1023,
+      "name" : "张1023",
+      "age" : 5,
+      "gender" : "男",
+      "chinese" : 12,
+      "math" : 10,
+      "english" : 13,
+      "teacherId" : 1001
+    }, {
+      "id" : 1024,
+      "name" : "张1024",
+      "age" : 7,
+      "gender" : "男",
+      "chinese" : 14,
+      "math" : 35,
+      "english" : 34,
+      "teacherId" : 1001
+    }, {
+      "id" : 1025,
+      "name" : "张1025",
+      "age" : 12,
+      "gender" : "男",
+      "chinese" : 29,
+      "math" : 70,
+      "english" : 60,
+      "teacherId" : 1001
+    }, {
+      "id" : 1026,
+      "name" : "张1026",
+      "age" : 17,
+      "gender" : "女",
+      "chinese" : 33,
+      "math" : 19,
+      "english" : 95,
+      "teacherId" : 1001
+    }, {
+      "id" : 1027,
+      "name" : "张1027",
+      "age" : 4,
+      "gender" : "男",
+      "chinese" : 85,
+      "math" : 97,
+      "english" : 31,
+      "teacherId" : 1001
+    }, {
+      "id" : 1028,
+      "name" : "张1028",
+      "age" : 13,
+      "gender" : "男",
+      "chinese" : 17,
+      "math" : 53,
+      "english" : 12,
+      "teacherId" : 1001
+    }, {
+      "id" : 1029,
+      "name" : "张1029",
+      "age" : 1,
+      "gender" : "女",
+      "chinese" : 2,
+      "math" : 65,
+      "english" : 14,
+      "teacherId" : 1001
+    } ],
+    "total" : 30,
+    "pageNum" : 3,
+    "pageSize" : 10,
+    "pages" : 3
+  }
+}
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:44:56.144 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-27 14:44:58.159 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-27 14:44:58.178 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 14:44:58.181 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 14:44:59.906 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 18021 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 14:44:59.907 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 14:44:59.980 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 14:45:00.137 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 14:45:00.138 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 14:45:00.148 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-08-27 14:45:00.184 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:45:00.419 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 14:45:00.423 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:45:00.424 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 14:45:00.424 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 14:45:00.443 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 522 ms
+2026-08-27 14:45:00.508 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:45:00.734 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 14:45:00.878 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:45:00.883 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 14:45:00.886 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 1.187 seconds (process running for 1.339)
+2026-08-27 14:53:02.107 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 14:53:02.108 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 14:53:02.109 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 14:53:02.182 [http-nio-8081-exec-1] [223c53d5e0934593] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /operation-log/list?pageNum=1&pageSize=5
+    traceId : 223c53d5e0934593
+    client  : 127.0.0.1
+    handler : OperationLogController.list
+    headers : {
+  "Host" : "127.0.0.1:8081",
+  "User-Agent" : "curl/8.7.1",
+  "Accept" : "*/*"
+}
+    args    : [ null, null, 1, 5 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:53:02.183 [http-nio-8081-exec-1] [223c53d5e0934593] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 OperationLogServiceImpl.list
+        args :
+    [ null, null, 1, 5 ]
+
+2026-08-27 14:53:02.217 [http-nio-8081-exec-1] [223c53d5e0934593] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 14:53:02.344 [http-nio-8081-exec-1] [223c53d5e0934593] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5915d746
+2026-08-27 14:53:02.344 [http-nio-8081-exec-1] [223c53d5e0934593] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 14:53:02.347 [http-nio-8081-exec-1] [223c53d5e0934593] DEBUG o.e.s.m.O.list_COUNT - ==>  Preparing: SELECT count(0) FROM operation_log
+2026-08-27 14:53:02.354 [http-nio-8081-exec-1] [223c53d5e0934593] DEBUG o.e.s.m.O.list_COUNT - ==> Parameters: 
+2026-08-27 14:53:02.363 [http-nio-8081-exec-1] [223c53d5e0934593] DEBUG o.e.s.m.O.list_COUNT - <==      Total: 1
+2026-08-27 14:53:02.364 [http-nio-8081-exec-1] [223c53d5e0934593] DEBUG o.e.s.mapper.OperationLogMapper.list - ==>  Preparing: SELECT id, trace_id AS traceId, module, operation, description, method, request_url AS requestUrl, request_params AS requestParams, response_code AS responseCode, operator_name AS operatorName, client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg, created_at AS createdAt FROM operation_log ORDER BY created_at DESC LIMIT ?
+2026-08-27 14:53:02.365 [http-nio-8081-exec-1] [223c53d5e0934593] DEBUG o.e.s.mapper.OperationLogMapper.list - ==> Parameters: 5(Integer)
+2026-08-27 14:53:02.408 [http-nio-8081-exec-1] [223c53d5e0934593] WARN  o.e.s.aspect.ServiceLogAspect -     ✖ 【Service 异常】 OperationLogServiceImpl.list | 226ms
+        error :
+    "\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline\n### The error occurred while setting parameters\n### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n; bad SQL grammar []"
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.list(Unknown Source)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl.list(OperationLogServiceImpl.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl$$SpringCGLIB$$0.list(<generated>)
+	at org.example.studentsystem.controller.OperationLogController.list(OperationLogController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.OperationLogController$$SpringCGLIB$$0.list(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.pageQuery(ExecutorUtil.java:215)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:161)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 98 common frames omitted
+2026-08-27 14:53:02.410 [http-nio-8081-exec-1] [223c53d5e0934593] ERROR o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+✖ 【API 系统异常】 OperationLogController.list | 281ms
+    error :
+"\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline\n### The error occurred while setting parameters\n### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n; bad SQL grammar []"
+══════════════════════════════════════════════════════════════
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.list(Unknown Source)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl.list(OperationLogServiceImpl.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl$$SpringCGLIB$$0.list(<generated>)
+	at org.example.studentsystem.controller.OperationLogController.list(OperationLogController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.OperationLogController$$SpringCGLIB$$0.list(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.pageQuery(ExecutorUtil.java:215)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:161)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 98 common frames omitted
+2026-08-27 14:53:02.412 [http-nio-8081-exec-1] [223c53d5e0934593] ERROR o.e.s.common.GlobalExceptionHandler - 
+══════════════════════════════════════════════════════════════
+✖ 【系统异常】 traceId=223c53d5e0934593
+    detail :
+"\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline\n### The error occurred while setting parameters\n### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n; bad SQL grammar []"
+══════════════════════════════════════════════════════════════
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.list(Unknown Source)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl.list(OperationLogServiceImpl.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl$$SpringCGLIB$$0.list(<generated>)
+	at org.example.studentsystem.controller.OperationLogController.list(OperationLogController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.OperationLogController$$SpringCGLIB$$0.list(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.pageQuery(ExecutorUtil.java:215)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:161)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 98 common frames omitted
+2026-08-27 14:54:24.782 [http-nio-8081-exec-2] [af3c2199bcc9480e] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /operation-log/list?pageNum=1&pageSize=3
+    traceId : af3c2199bcc9480e
+    client  : 127.0.0.1
+    handler : OperationLogController.list
+    headers : {
+  "Host" : "127.0.0.1:8081",
+  "User-Agent" : "curl/8.7.1",
+  "Accept" : "*/*"
+}
+    args    : [ null, null, 1, 3 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:54:24.782 [http-nio-8081-exec-2] [af3c2199bcc9480e] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 OperationLogServiceImpl.list
+        args :
+    [ null, null, 1, 3 ]
+
+2026-08-27 14:54:24.784 [http-nio-8081-exec-2] [af3c2199bcc9480e] DEBUG o.e.s.m.O.list_COUNT - ==>  Preparing: SELECT count(0) FROM operation_log
+2026-08-27 14:54:24.784 [http-nio-8081-exec-2] [af3c2199bcc9480e] DEBUG o.e.s.m.O.list_COUNT - ==> Parameters: 
+2026-08-27 14:54:24.785 [http-nio-8081-exec-2] [af3c2199bcc9480e] DEBUG o.e.s.m.O.list_COUNT - <==      Total: 1
+2026-08-27 14:54:24.785 [http-nio-8081-exec-2] [af3c2199bcc9480e] DEBUG o.e.s.mapper.OperationLogMapper.list - ==>  Preparing: SELECT id, trace_id AS traceId, module, operation, description, method, request_url AS requestUrl, request_params AS requestParams, response_code AS responseCode, operator_name AS operatorName, client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg, created_at AS createdAt FROM operation_log ORDER BY created_at DESC LIMIT ?
+2026-08-27 14:54:24.785 [http-nio-8081-exec-2] [af3c2199bcc9480e] DEBUG o.e.s.mapper.OperationLogMapper.list - ==> Parameters: 3(Integer)
+2026-08-27 14:54:24.786 [http-nio-8081-exec-2] [af3c2199bcc9480e] WARN  o.e.s.aspect.ServiceLogAspect -     ✖ 【Service 异常】 OperationLogServiceImpl.list | 4ms
+        error :
+    "\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline\n### The error occurred while setting parameters\n### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n; bad SQL grammar []"
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.list(Unknown Source)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl.list(OperationLogServiceImpl.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl$$SpringCGLIB$$0.list(<generated>)
+	at org.example.studentsystem.controller.OperationLogController.list(OperationLogController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.OperationLogController$$SpringCGLIB$$0.list(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.pageQuery(ExecutorUtil.java:215)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:161)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 98 common frames omitted
+2026-08-27 14:54:24.786 [http-nio-8081-exec-2] [af3c2199bcc9480e] ERROR o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+✖ 【API 系统异常】 OperationLogController.list | 5ms
+    error :
+"\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline\n### The error occurred while setting parameters\n### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n; bad SQL grammar []"
+══════════════════════════════════════════════════════════════
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.list(Unknown Source)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl.list(OperationLogServiceImpl.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl$$SpringCGLIB$$0.list(<generated>)
+	at org.example.studentsystem.controller.OperationLogController.list(OperationLogController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.OperationLogController$$SpringCGLIB$$0.list(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.pageQuery(ExecutorUtil.java:215)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:161)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 98 common frames omitted
+2026-08-27 14:54:24.787 [http-nio-8081-exec-2] [af3c2199bcc9480e] ERROR o.e.s.common.GlobalExceptionHandler - 
+══════════════════════════════════════════════════════════════
+✖ 【系统异常】 traceId=af3c2199bcc9480e
+    detail :
+"\n### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline\n### The error occurred while setting parameters\n### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?\n### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'\n; bad SQL grammar []"
+══════════════════════════════════════════════════════════════
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+### The error may exist in org/example/studentsystem/mapper/OperationLogMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.OperationLogMapper.list-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id, trace_id AS traceId, module, operation, description, method,        request_url AS requestUrl, request_params AS requestParams,        response_code AS responseCode, operator_name AS operatorName,        client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg,        created_at AS createdAt FROM operation_log    ORDER BY created_at DESC  LIMIT ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.list(Unknown Source)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl.list(OperationLogServiceImpl.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.OperationLogServiceImpl$$SpringCGLIB$$0.list(<generated>)
+	at org.example.studentsystem.controller.OperationLogController.list(OperationLogController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.OperationLogController$$SpringCGLIB$$0.list(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'trace_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.pageQuery(ExecutorUtil.java:215)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:161)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 98 common frames omitted
+2026-08-27 14:54:32.890 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 26.0.1 with PID 18855 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 14:54:32.890 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 14:54:32.948 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 14:54:33.094 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 14:54:33.094 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 14:54:33.102 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-08-27 14:54:33.128 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:54:33.342 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 14:54:33.347 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:54:33.348 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 14:54:33.348 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 14:54:33.372 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 469 ms
+2026-08-27 14:54:33.435 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:54:33.646 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 14:54:33.781 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:54:33.788 [main] [] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-08-27 14:54:33.794 [main] [] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-27 14:54:33.797 [main] [] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2026-08-27 14:55:51.101 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 26.0.1 with PID 19042 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 14:55:51.101 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 14:55:51.151 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 14:55:51.283 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 14:55:51.284 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 14:55:51.290 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-08-27 14:55:51.314 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:55:51.505 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 14:55:51.508 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:55:51.509 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 14:55:51.509 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 14:55:51.525 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 412 ms
+2026-08-27 14:55:51.585 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:55:51.780 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 14:55:51.921 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:55:51.927 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 14:55:51.929 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 0.973 seconds (process running for 1.076)
+2026-08-27 14:55:57.538 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 14:55:57.539 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 14:55:57.539 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-08-27 14:55:57.599 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /operation-log/list?pageNum=1&pageSize=2
+    traceId : 5b51227fa48942fd
+    client  : 127.0.0.1
+    handler : OperationLogController.list
+    headers : {
+  "Host" : "127.0.0.1:8081",
+  "User-Agent" : "curl/8.7.1",
+  "Accept" : "*/*"
+}
+    args    : [ null, 1, 2 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:55:57.600 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 OperationLogServiceImpl.list
+        args :
+    [ null, 1, 2 ]
+
+2026-08-27 14:55:57.638 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 14:55:57.751 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6932233e
+2026-08-27 14:55:57.751 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 14:55:57.754 [http-nio-8081-exec-1] [5b51227fa48942fd] DEBUG o.e.s.m.O.list_COUNT - ==>  Preparing: SELECT count(0) FROM operation_log
+2026-08-27 14:55:57.761 [http-nio-8081-exec-1] [5b51227fa48942fd] DEBUG o.e.s.m.O.list_COUNT - ==> Parameters: 
+2026-08-27 14:55:57.768 [http-nio-8081-exec-1] [5b51227fa48942fd] DEBUG o.e.s.m.O.list_COUNT - <==      Total: 1
+2026-08-27 14:55:57.770 [http-nio-8081-exec-1] [5b51227fa48942fd] DEBUG o.e.s.mapper.OperationLogMapper.list - ==>  Preparing: SELECT id, operation, request_url AS requestUrl, http_method AS httpMethod, class_method AS classMethod, ip, token, user_id AS userId, user_name AS userName, params, result, cost_time AS costTime, create_time AS createTime FROM operation_log ORDER BY create_time DESC LIMIT ?
+2026-08-27 14:55:57.771 [http-nio-8081-exec-1] [5b51227fa48942fd] DEBUG o.e.s.mapper.OperationLogMapper.list - ==> Parameters: 2(Integer)
+2026-08-27 14:55:57.773 [http-nio-8081-exec-1] [5b51227fa48942fd] DEBUG o.e.s.mapper.OperationLogMapper.list - <==      Total: 2
+2026-08-27 14:55:57.781 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 OperationLogServiceImpl.list | 173ms
+        result :
+    PageInfo{pageNum=1, pageSize=2, size=2, startRow=1, endRow=2, total=26, pages=13, list=Page{count=true, pageNum=1, pageSize=2, startRow=0, endRow=2, total=26, pages=13, reasonable=false, pageSizeZero=false}[OperationLog(id=26, operation=通过ID查询教师信息, requestUrl=http://127.0.0.1:8081/teacher/info/1001, httpMethod=GET, classMethod=TeacherController.getTeacher(..), ip=127.0.0.1, token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMxMiIsInVzZXJOYW1lIjoi5ZCN5a2XNi4yNC4xIiwiaWF0IjoxNzgyMjg0NzExLCJleHAiOjE3ODIzNzExMTF9.WSzjH6GiA-oeAx_BRe6PSYNqmtZZwcniPfbw7zpZZjs, userId=12312312, userName=名字6.24.1, params=[1001], result={"code":200,"content":{"age":17,"id":1001,"name":"1001","years":18},"message":"success"}, costTime=6, createTime=2026-06-24T15:35:42), OperationLog(id=25, operation=通过ID查询教师信息, requestUrl=http://127.0.0.1:8081/teacher/info/1001, httpMethod=GET, classMethod=TeacherController.getTeacher(..), ip=127.0.0.1, token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMxMiIsInVzZXJOYW1lIjoi5ZCN5a2XNi4yNC4xIiwiaWF0IjoxNzgyMjg0NzExLCJleHAiOjE3ODIzNzExMTF9.WSzjH6GiA-oeAx_BRe6PSYNqmtZZwcniPfbw7zpZZjs, userId=12312312, userName=名字6.24.1, params=[1001], result={"code":200,"content":{"age":17,"id":1001,"name":"1001","years":18},"message":"success"}, costTime=31, createTime=2026-06-24T15:35:39)], prePage=0, nextPage=2, isFirstPage=true, isLastPage=false, hasPreviousPage=false, hasNextPage=true, navigatePages=8, navigateFirstPage=1, navigateLastPage=8, navigatepageNums=[1, 2, 3, 4, 5, 6, 7, 8]}
+
+2026-08-27 14:55:57.782 [http-nio-8081-exec-1] [5b51227fa48942fd] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 OperationLogController.list | 228ms
+    result :
+PHResult(code=200, message=success, content=PageInfo{pageNum=1, pageSize=2, size=2, startRow=1, endRow=2, total=26, pages=13, list=Page{count=true, pageNum=1, pageSize=2, startRow=0, endRow=2, total=26, pages=13, reasonable=false, pageSizeZero=false}[OperationLog(id=26, operation=通过ID查询教师信息, requestUrl=http://127.0.0.1:8081/teacher/info/1001, httpMethod=GET, classMethod=TeacherController.getTeacher(..), ip=127.0.0.1, token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMxMiIsInVzZXJOYW1lIjoi5ZCN5a2XNi4yNC4xIiwiaWF0IjoxNzgyMjg0NzExLCJleHAiOjE3ODIzNzExMTF9.WSzjH6GiA-oeAx_BRe6PSYNqmtZZwcniPfbw7zpZZjs, userId=12312312, userName=名字6.24.1, params=[1001], result={"code":200,"content":{"age":17,"id":1001,"name":"1001","years":18},"message":"success"}, costTime=6, createTime=2026-06-24T15:35:42), OperationLog(id=25, operation=通过ID查询教师信息, requestUrl=http://127.0.0.1:8081/teacher/info/1001, httpMethod=GET, classMethod=TeacherController.getTeacher(..), ip=127.0.0.1, token=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMxMjMxMiIsInVzZXJOYW1lIjoi5ZCN5a2XNi4yNC4xIiwiaWF0IjoxNzgyMjg0NzExLCJleHAiOjE3ODIzNzExMTF9.WSzjH6GiA-oeAx_BRe6PSYNqmtZZwcniPfbw7zpZZjs, userId=12312312, userName=名字6.24.1, params=[1001], result={"code":200,"content":{"age":17,"id":1001,"name":"1001","years":18},"message":"success"}, costTime=31, createTime=2026-06-24T15:35:39)], prePage=0, nextPage=2, isFirstPage=true, isLastPage=false, hasPreviousPage=false, hasNextPage=true, navigatePages=8, navigateFirstPage=1, navigateLastPage=8, navigatepageNums=[1, 2, 3, 4, 5, 6, 7, 8]})
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:58:57.104 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 26.0.1 with PID 19536 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 14:58:57.105 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 14:58:57.161 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 14:58:57.303 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 14:58:57.304 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 14:58:57.312 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-08-27 14:58:57.339 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:58:57.539 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 14:58:57.543 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:58:57.543 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 14:58:57.543 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 14:58:57.560 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 442 ms
+2026-08-27 14:58:57.622 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 14:58:57.819 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 14:58:57.956 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 14:58:57.962 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 14:58:57.964 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 1.01 seconds (process running for 1.116)
+2026-08-27 14:59:02.901 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 14:59:02.901 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 14:59:02.902 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 14:59:02.982 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /teacher/insert
+    traceId : 11c31d30d77444c8
+    client  : 127.0.0.1
+    handler : TeacherController.insertTeacher
+    headers : {
+  "Host" : "127.0.0.1:8081",
+  "User-Agent" : "curl/8.7.1",
+  "Accept" : "*/*",
+  "Content-Type" : "application/json",
+  "Content-Length" : "55"
+}
+    args    : [ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:59:02.982 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.insertTeacherInfo
+        args :
+    [ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ]
+
+2026-08-27 14:59:02.987 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 14:59:03.095 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cc4fc0d
+2026-08-27 14:59:03.095 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 14:59:03.098 [http-nio-8081-exec-1] [11c31d30d77444c8] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 14:59:03.106 [http-nio-8081-exec-1] [11c31d30d77444c8] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 3001(Integer)
+2026-08-27 14:59:03.113 [http-nio-8081-exec-1] [11c31d30d77444c8] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 0
+2026-08-27 14:59:03.114 [http-nio-8081-exec-1] [11c31d30d77444c8] DEBUG o.e.s.m.T.insertTeacherInfo - ==>  Preparing: INSERT INTO teacher (id, name, age, gender) VALUES (?, ?, ?, ?)
+2026-08-27 14:59:03.115 [http-nio-8081-exec-1] [11c31d30d77444c8] DEBUG o.e.s.m.T.insertTeacherInfo - ==> Parameters: 3001(Integer), 教师3001(String), 35(Integer), 男(String)
+2026-08-27 14:59:03.118 [http-nio-8081-exec-1] [11c31d30d77444c8] DEBUG o.e.s.m.T.insertTeacherInfo - <==    Updates: 1
+2026-08-27 14:59:03.118 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.insertTeacherInfo | 136ms
+        result :
+    true
+
+2026-08-27 14:59:03.118 [http-nio-8081-exec-1] [11c31d30d77444c8] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.insertTeacher | 137ms
+    result :
+{
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:59:03.122 [task-1] [] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 OperationLogServiceImpl.saveAsync
+        args :
+    [OperationLog(id=null, traceId=11c31d30d77444c8, module=teacher, operation=INSERT, description=新增教师, method=TeacherController.insertTeacher, requestUrl=http://127.0.0.1:8081/teacher/insert, httpMethod=POST, requestParams=[ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ], responseBody={
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}, responseCode=200, operatorName=anonymous, clientIp=127.0.0.1, costMs=180, status=1, errorMsg=null, createdAt=2026-08-27T14:59:03.119038)]
+
+2026-08-27 14:59:03.122 [task-1] [] DEBUG o.e.s.m.OperationLogMapper.insert - ==>  Preparing: INSERT INTO operation_log ( trace_id, module, operation, description, method, request_url, http_method, request_params, response_body, response_code, operator_name, client_ip, cost_ms, status, error_msg, created_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-08-27 14:59:03.123 [task-1] [] DEBUG o.e.s.m.OperationLogMapper.insert - ==> Parameters: 11c31d30d77444c8(String), teacher(String), INSERT(String), 新增教师(String), TeacherController.insertTeacher(String), http://127.0.0.1:8081/teacher/insert(String), POST(String), [ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ](String), {
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}(String), 200(Integer), anonymous(String), 127.0.0.1(String), 180(Integer), 1(Integer), null, 2026-08-27T14:59:03.119038(LocalDateTime)
+2026-08-27 14:59:03.124 [task-1] [] DEBUG o.e.s.m.OperationLogMapper.insert - <==    Updates: 1
+2026-08-27 14:59:03.124 [task-1] [] INFO  o.e.s.s.impl.OperationLogServiceImpl - 审计日志已写入数据库, module=teacher, operation=INSERT, status=1
+2026-08-27 14:59:03.124 [task-1] [] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 OperationLogServiceImpl.saveAsync | 5ms
+        result :
+    null
+
+2026-08-27 14:59:04.159 [http-nio-8081-exec-2] [dce19be597c349e7] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /operation-log/list?pageNum=1&pageSize=1
+    traceId : dce19be597c349e7
+    client  : 127.0.0.1
+    handler : OperationLogController.list
+    headers : {
+  "Host" : "127.0.0.1:8081",
+  "User-Agent" : "curl/8.7.1",
+  "Accept" : "*/*"
+}
+    args    : [ null, null, 1, 1 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 14:59:04.160 [http-nio-8081-exec-2] [dce19be597c349e7] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 OperationLogServiceImpl.list
+        args :
+    [ null, null, 1, 1 ]
+
+2026-08-27 14:59:04.204 [http-nio-8081-exec-2] [dce19be597c349e7] DEBUG o.e.s.m.O.list_COUNT - ==>  Preparing: SELECT count(0) FROM operation_log
+2026-08-27 14:59:04.204 [http-nio-8081-exec-2] [dce19be597c349e7] DEBUG o.e.s.m.O.list_COUNT - ==> Parameters: 
+2026-08-27 14:59:04.205 [http-nio-8081-exec-2] [dce19be597c349e7] DEBUG o.e.s.m.O.list_COUNT - <==      Total: 1
+2026-08-27 14:59:04.206 [http-nio-8081-exec-2] [dce19be597c349e7] DEBUG o.e.s.mapper.OperationLogMapper.list - ==>  Preparing: SELECT id, trace_id AS traceId, module, operation, description, method, request_url AS requestUrl, http_method AS httpMethod, request_params AS requestParams, response_body AS responseBody, response_code AS responseCode, operator_name AS operatorName, client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg, created_at AS createdAt FROM operation_log ORDER BY created_at DESC LIMIT ?
+2026-08-27 14:59:04.206 [http-nio-8081-exec-2] [dce19be597c349e7] DEBUG o.e.s.mapper.OperationLogMapper.list - ==> Parameters: 1(Integer)
+2026-08-27 14:59:04.208 [http-nio-8081-exec-2] [dce19be597c349e7] DEBUG o.e.s.mapper.OperationLogMapper.list - <==      Total: 1
+2026-08-27 14:59:04.212 [http-nio-8081-exec-2] [dce19be597c349e7] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 OperationLogServiceImpl.list | 49ms
+        result :
+    PageInfo{pageNum=1, pageSize=1, size=1, startRow=1, endRow=1, total=1, pages=1, list=Page{count=true, pageNum=1, pageSize=1, startRow=0, endRow=1, total=1, pages=1, reasonable=false, pageSizeZero=false}[OperationLog(id=1, traceId=11c31d30d77444c8, module=teacher, operation=INSERT, description=新增教师, method=TeacherController.insertTeacher, requestUrl=http://127.0.0.1:8081/teacher/insert, httpMethod=POST, requestParams=[ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ], responseBody={
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}, responseCode=200, operatorName=anonymous, clientIp=127.0.0.1, costMs=180, status=1, errorMsg=null, createdAt=2026-08-27T14:59:03)], prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage=1, navigateLastPage=1, navigatepageNums=[1]}
+
+2026-08-27 14:59:04.212 [http-nio-8081-exec-2] [dce19be597c349e7] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 OperationLogController.list | 54ms
+    result :
+PHResult(code=200, message=success, content=PageInfo{pageNum=1, pageSize=1, size=1, startRow=1, endRow=1, total=1, pages=1, list=Page{count=true, pageNum=1, pageSize=1, startRow=0, endRow=1, total=1, pages=1, reasonable=false, pageSizeZero=false}[OperationLog(id=1, traceId=11c31d30d77444c8, module=teacher, operation=INSERT, description=新增教师, method=TeacherController.insertTeacher, requestUrl=http://127.0.0.1:8081/teacher/insert, httpMethod=POST, requestParams=[ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ], responseBody={
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}, responseCode=200, operatorName=anonymous, clientIp=127.0.0.1, costMs=180, status=1, errorMsg=null, createdAt=2026-08-27T14:59:03)], prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage=1, navigateLastPage=1, navigatepageNums=[1]})
+══════════════════════════════════════════════════════════════
+
+2026-08-27 15:01:18.520 [http-nio-8081-exec-4] [38854a30522a4e2a] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /operation-log/list?module=teacher&operation=INSERT
+    traceId : 38854a30522a4e2a
+    client  : 127.0.0.1
+    handler : OperationLogController.list
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.56.1",
+  "Accept" : "*/*",
+  "Postman-Token" : "753824cc-5dcd-45e6-8efc-6f41daa12197",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ "teacher", "INSERT", 1, 10 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 15:01:18.521 [http-nio-8081-exec-4] [38854a30522a4e2a] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 OperationLogServiceImpl.list
+        args :
+    [ "teacher", "INSERT", 1, 10 ]
+
+2026-08-27 15:01:18.532 [http-nio-8081-exec-4] [38854a30522a4e2a] DEBUG o.e.s.m.O.list_COUNT - ==>  Preparing: SELECT count(0) FROM operation_log WHERE module = ? AND operation = ?
+2026-08-27 15:01:18.532 [http-nio-8081-exec-4] [38854a30522a4e2a] DEBUG o.e.s.m.O.list_COUNT - ==> Parameters: teacher(String), INSERT(String)
+2026-08-27 15:01:18.533 [http-nio-8081-exec-4] [38854a30522a4e2a] DEBUG o.e.s.m.O.list_COUNT - <==      Total: 1
+2026-08-27 15:01:18.534 [http-nio-8081-exec-4] [38854a30522a4e2a] DEBUG o.e.s.mapper.OperationLogMapper.list - ==>  Preparing: SELECT id, trace_id AS traceId, module, operation, description, method, request_url AS requestUrl, http_method AS httpMethod, request_params AS requestParams, response_body AS responseBody, response_code AS responseCode, operator_name AS operatorName, client_ip AS clientIp, cost_ms AS costMs, status, error_msg AS errorMsg, created_at AS createdAt FROM operation_log WHERE module = ? AND operation = ? ORDER BY created_at DESC LIMIT ?
+2026-08-27 15:01:18.534 [http-nio-8081-exec-4] [38854a30522a4e2a] DEBUG o.e.s.mapper.OperationLogMapper.list - ==> Parameters: teacher(String), INSERT(String), 10(Integer)
+2026-08-27 15:01:18.536 [http-nio-8081-exec-4] [38854a30522a4e2a] DEBUG o.e.s.mapper.OperationLogMapper.list - <==      Total: 1
+2026-08-27 15:01:18.536 [http-nio-8081-exec-4] [38854a30522a4e2a] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 OperationLogServiceImpl.list | 15ms
+        result :
+    PageInfo{pageNum=1, pageSize=10, size=1, startRow=1, endRow=1, total=1, pages=1, list=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=1, pages=1, reasonable=false, pageSizeZero=false}[OperationLog(id=1, traceId=11c31d30d77444c8, module=teacher, operation=INSERT, description=新增教师, method=TeacherController.insertTeacher, requestUrl=http://127.0.0.1:8081/teacher/insert, httpMethod=POST, requestParams=[ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ], responseBody={
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}, responseCode=200, operatorName=anonymous, clientIp=127.0.0.1, costMs=180, status=1, errorMsg=null, createdAt=2026-08-27T14:59:03)], prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage=1, navigateLastPage=1, navigatepageNums=[1]}
+
+2026-08-27 15:01:18.537 [http-nio-8081-exec-4] [38854a30522a4e2a] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 OperationLogController.list | 16ms
+    result :
+PHResult(code=200, message=success, content=PageInfo{pageNum=1, pageSize=10, size=1, startRow=1, endRow=1, total=1, pages=1, list=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=1, pages=1, reasonable=false, pageSizeZero=false}[OperationLog(id=1, traceId=11c31d30d77444c8, module=teacher, operation=INSERT, description=新增教师, method=TeacherController.insertTeacher, requestUrl=http://127.0.0.1:8081/teacher/insert, httpMethod=POST, requestParams=[ {
+  "id" : 3001,
+  "name" : "教师3001",
+  "gender" : "男",
+  "age" : 35
+} ], responseBody={
+  "code" : 200,
+  "message" : "success",
+  "content" : true
+}, responseCode=200, operatorName=anonymous, clientIp=127.0.0.1, costMs=180, status=1, errorMsg=null, createdAt=2026-08-27T14:59:03)], prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage=1, navigateLastPage=1, navigatepageNums=[1]})
+══════════════════════════════════════════════════════════════
+
