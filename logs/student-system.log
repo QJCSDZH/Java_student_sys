@@ -1,0 +1,765 @@
+2026-08-27 10:59:10.686 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 4611 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 10:59:10.688 [main] [] DEBUG o.e.s.StudentSystemApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-08-27 10:59:10.689 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 10:59:10.755 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 10:59:10.888 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 10:59:10.889 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 10:59:10.898 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-08-27 10:59:11.126 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 10:59:11.130 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 10:59:11.131 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 10:59:11.131 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 10:59:11.147 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 436 ms
+2026-08-27 10:59:11.356 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 10:59:11.479 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 10:59:11.485 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 10:59:11.487 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 0.981 seconds (process running for 1.112)
+2026-08-27 10:59:12.874 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-27 10:59:14.884 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-27 10:59:17.660 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 4624 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 10:59:17.661 [main] [] DEBUG o.e.s.StudentSystemApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-08-27 10:59:17.661 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 10:59:17.731 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 10:59:17.870 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 10:59:17.871 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 10:59:17.884 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-08-27 10:59:18.147 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 10:59:18.151 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 10:59:18.152 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 10:59:18.152 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 10:59:18.170 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 495 ms
+2026-08-27 10:59:18.402 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 10:59:18.526 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 10:59:18.545 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 10:59:18.553 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 1.069 seconds (process running for 1.49)
+2026-08-27 10:59:22.403 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 10:59:22.403 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 10:59:22.404 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 10:59:22.419 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  o.e.s.aspect.WebLogAspect - [请求] GET /teacher/infoById TeacherController.getTeacherInfoById args=[1001, 3, 10]
+2026-08-27 10:59:22.419 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  o.e.s.s.impl.TeacherServiceImpl - 查询教师详情, id=1001, pageNum=3, pageSize=10
+2026-08-27 10:59:22.425 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 10:59:22.542 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@623c07b4
+2026-08-27 10:59:22.542 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 10:59:22.545 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 10:59:22.555 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 10:59:22.564 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 10:59:22.586 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 10:59:22.586 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 10:59:22.587 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 10:59:22.588 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-08-27 10:59:22.588 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1001(Integer), 20(Long), 10(Integer)
+2026-08-27 10:59:22.590 [http-nio-8081-exec-1] [1c4b5fb889a5436e] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 10
+2026-08-27 10:59:22.591 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  o.e.s.s.impl.TeacherServiceImpl - 查询教师详情完成, id=1001, total=30, pages=3
+2026-08-27 10:59:22.591 [http-nio-8081-exec-1] [1c4b5fb889a5436e] INFO  o.e.s.aspect.WebLogAspect - [响应] TeacherController.getTeacherInfoById cost=172ms
+2026-08-27 11:06:18.170 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-27 11:06:20.177 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-27 11:06:20.185 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 11:06:20.186 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 11:06:21.192 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 4919 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 11:06:21.192 [main] [] DEBUG o.e.s.StudentSystemApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-08-27 11:06:21.193 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 11:06:21.256 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 11:06:21.398 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 11:06:21.399 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 11:06:21.409 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-08-27 11:06:21.674 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 11:06:21.678 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:06:21.678 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 11:06:21.678 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 11:06:21.695 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 488 ms
+2026-08-27 11:06:21.952 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 11:06:22.096 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:06:22.107 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 11:06:22.110 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 1.138 seconds (process running for 1.36)
+2026-08-27 11:06:27.448 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 11:06:27.448 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 11:06:27.449 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 11:06:27.462 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] INFO  o.e.s.aspect.WebLogAspect - [请求] GET /teacher/infoById TeacherController.getTeacherInfoById args=[1001, 3, 10]
+2026-08-27 11:06:27.462 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.aspect.ServiceLogAspect - [Service] TeacherServiceImpl.getTeacherInfoById args=[1001, 3, 10]
+2026-08-27 11:06:27.468 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 11:06:27.583 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f3b6873
+2026-08-27 11:06:27.584 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 11:06:27.587 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 11:06:27.595 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 11:06:27.603 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 11:06:27.623 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 11:06:27.623 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 11:06:27.624 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 11:06:27.625 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-08-27 11:06:27.625 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1001(Integer), 20(Long), 10(Integer)
+2026-08-27 11:06:27.627 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 10
+2026-08-27 11:06:27.627 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] DEBUG o.e.s.aspect.ServiceLogAspect - [Service] TeacherServiceImpl.getTeacherInfoById cost=165ms
+2026-08-27 11:06:27.627 [http-nio-8081-exec-1] [cb5cf2b1ba0748b9] INFO  o.e.s.aspect.WebLogAspect - [响应] TeacherController.getTeacherInfoById cost=165ms
+2026-08-27 11:15:59.538 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-27 11:16:01.544 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-27 11:16:01.551 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 11:16:01.553 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 11:16:02.628 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 5314 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 11:16:02.629 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 11:16:02.691 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 11:16:02.827 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 11:16:02.828 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 11:16:02.842 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-08-27 11:16:03.097 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 11:16:03.101 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:16:03.101 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 11:16:03.101 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 11:16:03.119 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 475 ms
+2026-08-27 11:16:03.372 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 11:16:03.515 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:16:03.526 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 11:16:03.528 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 1.098 seconds (process running for 1.294)
+2026-08-27 11:16:08.768 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 11:16:08.768 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 11:16:08.769 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 11:16:08.782 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=1001&pageNum=3&pageSize=10
+    traceId : c123a3c4801f43a9
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    args    : [1001, 3, 10]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:16:08.782 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById | args=[1001, 3, 10]
+2026-08-27 11:16:08.788 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 11:16:08.903 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f51ded3
+2026-08-27 11:16:08.903 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 11:16:08.906 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 11:16:08.915 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 11:16:08.923 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 11:16:08.955 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 11:16:08.955 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 11:16:08.957 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 11:16:08.959 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-08-27 11:16:08.960 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1001(Integer), 20(Long), 10(Integer)
+2026-08-27 11:16:08.968 [http-nio-8081-exec-1] [c123a3c4801f43a9] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 10
+2026-08-27 11:16:08.975 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 188ms | result=TeacherDetail(id=1001, name=教师1001, total=30, page=3/3, students=10)
+2026-08-27 11:16:08.977 [http-nio-8081-exec-1] [c123a3c4801f43a9] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 195ms
+    result : code=200, message=success, content=TeacherDetail(id=1001, name=教师1001, total=30, page=3/3, students=10)
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:17:10.445 [http-nio-8081-exec-3] [69955b666b61415a] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=1001&pageNum=4&pageSize=10
+    traceId : 69955b666b61415a
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    args    : [1001, 4, 10]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:17:10.445 [http-nio-8081-exec-3] [69955b666b61415a] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById | args=[1001, 4, 10]
+2026-08-27 11:17:10.445 [http-nio-8081-exec-3] [69955b666b61415a] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 11:17:10.446 [http-nio-8081-exec-3] [69955b666b61415a] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 11:17:10.446 [http-nio-8081-exec-3] [69955b666b61415a] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 11:17:10.448 [http-nio-8081-exec-3] [69955b666b61415a] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 11:17:10.448 [http-nio-8081-exec-3] [69955b666b61415a] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 11:17:10.449 [http-nio-8081-exec-3] [69955b666b61415a] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 11:17:10.449 [http-nio-8081-exec-3] [69955b666b61415a] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 4ms | result=TeacherDetail(id=1001, name=教师1001, total=30, page=4/3, students=0)
+2026-08-27 11:17:10.449 [http-nio-8081-exec-3] [69955b666b61415a] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 4ms
+    result : code=200, message=success, content=TeacherDetail(id=1001, name=教师1001, total=30, page=4/3, students=0)
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:19:30.525 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-27 11:19:32.538 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-27 11:19:32.546 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 11:19:32.548 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 11:19:33.818 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 5614 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 11:19:33.820 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 11:19:33.923 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 11:19:34.127 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 11:19:34.128 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 11:19:34.136 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-08-27 11:19:34.165 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 11:19:34.399 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 11:19:34.404 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:19:34.404 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 11:19:34.405 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 11:19:34.423 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 584 ms
+2026-08-27 11:19:34.489 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 11:19:34.696 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 11:19:34.851 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:19:34.862 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 11:19:34.865 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 1.286 seconds (process running for 1.474)
+2026-08-27 11:19:42.016 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 11:19:42.016 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 11:19:42.017 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 11:19:42.088 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=1001&pageNum=3&pageSize=10
+    traceId : cd061b4ab8a94575
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.56.1",
+  "Accept" : "*/*",
+  "Postman-Token" : "87f5a788-268b-483c-9cd3-28909a7ec219",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ 1001, 3, 10 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:19:42.088 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById
+        args :
+    [ 1001, 3, 10 ]
+
+2026-08-27 11:19:42.095 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 11:19:42.247 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eb82c7b
+2026-08-27 11:19:42.247 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 11:19:42.250 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 11:19:42.259 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 11:19:42.267 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 11:19:42.290 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 11:19:42.291 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 11:19:42.292 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 11:19:42.292 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-08-27 11:19:42.292 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1001(Integer), 20(Long), 10(Integer)
+2026-08-27 11:19:42.294 [http-nio-8081-exec-1] [cd061b4ab8a94575] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 10
+2026-08-27 11:19:42.303 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 206ms
+        result :
+    {
+  "id" : 1001,
+  "name" : "教师1001",
+  "gender" : "女",
+  "age" : 30,
+  "students" : [ {
+    "id" : 1020,
+    "name" : "张1020",
+    "age" : 14,
+    "gender" : "男",
+    "chinese" : 44,
+    "math" : 17,
+    "english" : 56,
+    "teacherId" : 1001
+  }, {
+    "id" : 1021,
+    "name" : "张1021",
+    "age" : 5,
+    "gender" : "女",
+    "chinese" : 47,
+    "math" : 40,
+    "english" : 60,
+    "teacherId" : 1001
+  }, {
+    "id" : 1022,
+    "name" : "张1022",
+    "age" : 15,
+    "gender" : "男",
+    "chinese" : 27,
+    "math" : 97,
+    "english" : 3,
+    "teacherId" : 1001
+  }, {
+    "id" : 1023,
+    "name" : "张1023",
+    "age" : 5,
+    "gender" : "男",
+    "chinese" : 12,
+    "math" : 10,
+    "english" : 13,
+    "teacherId" : 1001
+  }, {
+    "id" : 1024,
+    "name" : "张1024",
+    "age" : 7,
+    "gender" : "男",
+    "chinese" : 14,
+    "math" : 35,
+    "english" : 34,
+    "teacherId" : 1001
+  }, {
+    "id" : 1025,
+    "name" : "张1025",
+    "age" : 12,
+    "gender" : "男",
+    "chinese" : 29,
+    "math" : 70,
+    "english" : 60,
+    "teacherId" : 1001
+  }, {
+    "id" : 1026,
+    "name" : "张1026",
+    "age" : 17,
+    "gender" : "女",
+    "chinese" : 33,
+    "math" : 19,
+    "english" : 95,
+    "teacherId" : 1001
+  }, {
+    "id" : 1027,
+    "name" : "张1027",
+    "age" : 4,
+    "gender" : "男",
+    "chinese" : 85,
+    "math" : 97,
+    "english" : 31,
+    "teacherId" : 1001
+  }, {
+    "id" : 1028,
+    "name" : "张1028",
+    "age" : 13,
+    "gender" : "男",
+    "chinese" : 17,
+    "math" : 53,
+    "english" : 12,
+    "teacherId" : 1001
+  }, {
+    "id" : 1029,
+    "name" : "张1029",
+    "age" : 1,
+    "gender" : "女",
+    "chinese" : 2,
+    "math" : 65,
+    "english" : 14,
+    "teacherId" : 1001
+  } ],
+  "total" : 30,
+  "pageNum" : 3,
+  "pageSize" : 10,
+  "pages" : 3
+}
+
+2026-08-27 11:19:42.305 [http-nio-8081-exec-1] [cd061b4ab8a94575] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 275ms
+    result :
+{
+  "code" : 200,
+  "message" : "success",
+  "content" : {
+    "id" : 1001,
+    "name" : "教师1001",
+    "gender" : "女",
+    "age" : 30,
+    "students" : [ {
+      "id" : 1020,
+      "name" : "张1020",
+      "age" : 14,
+      "gender" : "男",
+      "chinese" : 44,
+      "math" : 17,
+      "english" : 56,
+      "teacherId" : 1001
+    }, {
+      "id" : 1021,
+      "name" : "张1021",
+      "age" : 5,
+      "gender" : "女",
+      "chinese" : 47,
+      "math" : 40,
+      "english" : 60,
+      "teacherId" : 1001
+    }, {
+      "id" : 1022,
+      "name" : "张1022",
+      "age" : 15,
+      "gender" : "男",
+      "chinese" : 27,
+      "math" : 97,
+      "english" : 3,
+      "teacherId" : 1001
+    }, {
+      "id" : 1023,
+      "name" : "张1023",
+      "age" : 5,
+      "gender" : "男",
+      "chinese" : 12,
+      "math" : 10,
+      "english" : 13,
+      "teacherId" : 1001
+    }, {
+      "id" : 1024,
+      "name" : "张1024",
+      "age" : 7,
+      "gender" : "男",
+      "chinese" : 14,
+      "math" : 35,
+      "english" : 34,
+      "teacherId" : 1001
+    }, {
+      "id" : 1025,
+      "name" : "张1025",
+      "age" : 12,
+      "gender" : "男",
+      "chinese" : 29,
+      "math" : 70,
+      "english" : 60,
+      "teacherId" : 1001
+    }, {
+      "id" : 1026,
+      "name" : "张1026",
+      "age" : 17,
+      "gender" : "女",
+      "chinese" : 33,
+      "math" : 19,
+      "english" : 95,
+      "teacherId" : 1001
+    }, {
+      "id" : 1027,
+      "name" : "张1027",
+      "age" : 4,
+      "gender" : "男",
+      "chinese" : 85,
+      "math" : 97,
+      "english" : 31,
+      "teacherId" : 1001
+    }, {
+      "id" : 1028,
+      "name" : "张1028",
+      "age" : 13,
+      "gender" : "男",
+      "chinese" : 17,
+      "math" : 53,
+      "english" : 12,
+      "teacherId" : 1001
+    }, {
+      "id" : 1029,
+      "name" : "张1029",
+      "age" : 1,
+      "gender" : "女",
+      "chinese" : 2,
+      "math" : 65,
+      "english" : 14,
+      "teacherId" : 1001
+    } ],
+    "total" : 30,
+    "pageNum" : 3,
+    "pageSize" : 10,
+    "pages" : 3
+  }
+}
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:21:09.434 [http-nio-8081-exec-3] [38337ab18c6a473d] ERROR o.e.s.common.GlobalExceptionHandler - 
+══════════════════════════════════════════════════════════════
+✖ 【系统异常】 traceId=38337ab18c6a473d
+    detail :
+"Required request parameter 'id' for method parameter type Integer is not present"
+══════════════════════════════════════════════════════════════
+
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Integer is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:219)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:195)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:123)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:174)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-08-27 11:21:45.315 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-27 11:21:47.320 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-27 11:21:47.324 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 11:21:47.326 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 11:21:49.559 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 17.0.19 with PID 5632 (/Users/mark/Desktop/JavaStudent/target/classes started by mark in /Users/mark/Desktop/JavaStudent)
+2026-08-27 11:21:49.560 [main] [] INFO  o.e.s.StudentSystemApplication - The following 1 profile is active: "dev"
+2026-08-27 11:21:49.620 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-08-27 11:21:49.745 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 11:21:49.746 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 11:21:49.754 [main] [] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-08-27 11:21:49.781 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 11:21:49.965 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-27 11:21:49.969 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:21:49.969 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 11:21:49.970 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-08-27 11:21:49.985 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 409 ms
+2026-08-27 11:21:50.042 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-08-27 11:21:50.203 [main] [] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-27 11:21:50.321 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-27 11:21:50.326 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-27 11:21:50.328 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 0.933 seconds (process running for 1.071)
+2026-08-27 11:22:02.482 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 11:22:02.483 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 11:22:02.484 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-27 11:22:02.551 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=1001&pageNum=3&pageSize=10
+    traceId : 8fb645956b48457e
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.56.1",
+  "Accept" : "*/*",
+  "Postman-Token" : "3f5affca-67c7-4b3e-b439-136a58015c92",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ 1001, 3, 10 ]
+══════════════════════════════════════════════════════════════
+
+2026-08-27 11:22:02.551 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById
+        args :
+    [ 1001, 3, 10 ]
+
+2026-08-27 11:22:02.557 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 11:22:02.649 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68f5118b
+2026-08-27 11:22:02.650 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 11:22:02.652 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-08-27 11:22:02.660 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1001(Integer)
+2026-08-27 11:22:02.667 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-08-27 11:22:02.690 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-08-27 11:22:02.690 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1001(Integer)
+2026-08-27 11:22:02.691 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-08-27 11:22:02.692 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-08-27 11:22:02.693 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1001(Integer), 20(Long), 10(Integer)
+2026-08-27 11:22:02.694 [http-nio-8081-exec-1] [8fb645956b48457e] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 10
+2026-08-27 11:22:02.703 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 144ms
+        result :
+    {
+  "id" : 1001,
+  "name" : "教师1001",
+  "gender" : "女",
+  "age" : 30,
+  "students" : [ {
+    "id" : 1020,
+    "name" : "张1020",
+    "age" : 14,
+    "gender" : "男",
+    "chinese" : 44,
+    "math" : 17,
+    "english" : 56,
+    "teacherId" : 1001
+  }, {
+    "id" : 1021,
+    "name" : "张1021",
+    "age" : 5,
+    "gender" : "女",
+    "chinese" : 47,
+    "math" : 40,
+    "english" : 60,
+    "teacherId" : 1001
+  }, {
+    "id" : 1022,
+    "name" : "张1022",
+    "age" : 15,
+    "gender" : "男",
+    "chinese" : 27,
+    "math" : 97,
+    "english" : 3,
+    "teacherId" : 1001
+  }, {
+    "id" : 1023,
+    "name" : "张1023",
+    "age" : 5,
+    "gender" : "男",
+    "chinese" : 12,
+    "math" : 10,
+    "english" : 13,
+    "teacherId" : 1001
+  }, {
+    "id" : 1024,
+    "name" : "张1024",
+    "age" : 7,
+    "gender" : "男",
+    "chinese" : 14,
+    "math" : 35,
+    "english" : 34,
+    "teacherId" : 1001
+  }, {
+    "id" : 1025,
+    "name" : "张1025",
+    "age" : 12,
+    "gender" : "男",
+    "chinese" : 29,
+    "math" : 70,
+    "english" : 60,
+    "teacherId" : 1001
+  }, {
+    "id" : 1026,
+    "name" : "张1026",
+    "age" : 17,
+    "gender" : "女",
+    "chinese" : 33,
+    "math" : 19,
+    "english" : 95,
+    "teacherId" : 1001
+  }, {
+    "id" : 1027,
+    "name" : "张1027",
+    "age" : 4,
+    "gender" : "男",
+    "chinese" : 85,
+    "math" : 97,
+    "english" : 31,
+    "teacherId" : 1001
+  }, {
+    "id" : 1028,
+    "name" : "张1028",
+    "age" : 13,
+    "gender" : "男",
+    "chinese" : 17,
+    "math" : 53,
+    "english" : 12,
+    "teacherId" : 1001
+  }, {
+    "id" : 1029,
+    "name" : "张1029",
+    "age" : 1,
+    "gender" : "女",
+    "chinese" : 2,
+    "math" : 65,
+    "english" : 14,
+    "teacherId" : 1001
+  } ],
+  "total" : 30,
+  "pageNum" : 3,
+  "pageSize" : 10,
+  "pages" : 3
+}
+
+2026-08-27 11:22:02.704 [http-nio-8081-exec-1] [8fb645956b48457e] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 205ms
+    result :
+{
+  "code" : 200,
+  "message" : "success",
+  "content" : {
+    "id" : 1001,
+    "name" : "教师1001",
+    "gender" : "女",
+    "age" : 30,
+    "students" : [ {
+      "id" : 1020,
+      "name" : "张1020",
+      "age" : 14,
+      "gender" : "男",
+      "chinese" : 44,
+      "math" : 17,
+      "english" : 56,
+      "teacherId" : 1001
+    }, {
+      "id" : 1021,
+      "name" : "张1021",
+      "age" : 5,
+      "gender" : "女",
+      "chinese" : 47,
+      "math" : 40,
+      "english" : 60,
+      "teacherId" : 1001
+    }, {
+      "id" : 1022,
+      "name" : "张1022",
+      "age" : 15,
+      "gender" : "男",
+      "chinese" : 27,
+      "math" : 97,
+      "english" : 3,
+      "teacherId" : 1001
+    }, {
+      "id" : 1023,
+      "name" : "张1023",
+      "age" : 5,
+      "gender" : "男",
+      "chinese" : 12,
+      "math" : 10,
+      "english" : 13,
+      "teacherId" : 1001
+    }, {
+      "id" : 1024,
+      "name" : "张1024",
+      "age" : 7,
+      "gender" : "男",
+      "chinese" : 14,
+      "math" : 35,
+      "english" : 34,
+      "teacherId" : 1001
+    }, {
+      "id" : 1025,
+      "name" : "张1025",
+      "age" : 12,
+      "gender" : "男",
+      "chinese" : 29,
+      "math" : 70,
+      "english" : 60,
+      "teacherId" : 1001
+    }, {
+      "id" : 1026,
+      "name" : "张1026",
+      "age" : 17,
+      "gender" : "女",
+      "chinese" : 33,
+      "math" : 19,
+      "english" : 95,
+      "teacherId" : 1001
+    }, {
+      "id" : 1027,
+      "name" : "张1027",
+      "age" : 4,
+      "gender" : "男",
+      "chinese" : 85,
+      "math" : 97,
+      "english" : 31,
+      "teacherId" : 1001
+    }, {
+      "id" : 1028,
+      "name" : "张1028",
+      "age" : 13,
+      "gender" : "男",
+      "chinese" : 17,
+      "math" : 53,
+      "english" : 12,
+      "teacherId" : 1001
+    }, {
+      "id" : 1029,
+      "name" : "张1029",
+      "age" : 1,
+      "gender" : "女",
+      "chinese" : 2,
+      "math" : 65,
+      "english" : 14,
+      "teacherId" : 1001
+    } ],
+    "total" : 30,
+    "pageNum" : 3,
+    "pageSize" : 10,
+    "pages" : 3
+  }
+}
+══════════════════════════════════════════════════════════════
+

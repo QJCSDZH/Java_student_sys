@@ -17,7 +17,6 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-
 public class TeacherServiceImpl implements TeacherService {
     private final TeacherMapper teacherMapper;
     private final StudentMapper studentMapper;
@@ -32,8 +31,6 @@ public class TeacherServiceImpl implements TeacherService {
         return teachers;
     }
 
-
-
     @Override
     public TeacherDetailDTO getTeacherInfoById(Integer id, int pageNum, int pageSize) {
         Teacher teacher = teacherMapper.listById(id);
@@ -42,24 +39,25 @@ public class TeacherServiceImpl implements TeacherService {
         }
 
         PageHelper.startPage(pageNum, pageSize);
-        List<Student> students = studentMapper.listByTeacherId(teacher.getId());
-        PageInfo<Student> pageInfo = new PageInfo<>(students);
+        try {
+            List<Student> students = studentMapper.listByTeacherId(teacher.getId());
+            PageInfo<Student> pageInfo = new PageInfo<>(students);
 
-        TeacherDetailDTO dto = new TeacherDetailDTO();
-        dto.setId(teacher.getId());
-        dto.setName(teacher.getName());
-        dto.setGender(teacher.getGender());
-        dto.setAge(teacher.getAge());
-
-        dto.setStudents(pageInfo.getList());
-        dto.setTotal(pageInfo.getTotal());
-        dto.setPageNum(pageInfo.getPageNum());
-        dto.setPageSize(pageInfo.getPageSize());
-        dto.setPages(pageInfo.getPages());
-        return dto;
+            TeacherDetailDTO dto = new TeacherDetailDTO();
+            dto.setId(teacher.getId());
+            dto.setName(teacher.getName());
+            dto.setGender(teacher.getGender());
+            dto.setAge(teacher.getAge());
+            dto.setStudents(pageInfo.getList());
+            dto.setTotal(pageInfo.getTotal());
+            dto.setPageNum(pageInfo.getPageNum());
+            dto.setPageSize(pageInfo.getPageSize());
+            dto.setPages(pageInfo.getPages());
+            return dto;
+        } finally {
+            PageHelper.clearPage();
+        }
     }
-
-
 
     @Override
     public Boolean insertTeacherInfo(TeacherDTO teacherDTO) {
