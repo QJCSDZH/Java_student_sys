@@ -96,20 +96,9 @@
 
 
 
-        <!-- Redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+        <!-- Redis：当前业务未使用；保留会在本机无 Redis 时干扰启动，已移除 -->
 
-
-        <!-- jackson 对象序列化/反序列化工具 -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-
+        <!-- Jackson 3 由 spring-boot-starter-webmvc 传递引入（tools.jackson.*），无需再声明 jackson 2 -->
 
     </dependencies>
 

@@ -43,4 +43,11 @@ public class TeacherController {
         return PHResult.success(teacherService.insertTeacherInfo(teacherDTO));
     }
 
+
+    // 更新教师信息(没有查询到该教师就报错,如查询到就更新对应的非空非null字段)
+    // http://127.0.0.1:8081/teacher/update
+    @PostMapping("update")
+    public PHResult<Boolean> updateTeacherInfo(@RequestBody TeacherDTO teacherDTO) {
+        return PHResult.success(teacherService.updateTeacherInfo(teacherDTO));
+    }
 }

@@ -71,4 +71,18 @@ public class TeacherServiceImpl implements TeacherService {
         }
         return true;
     }
+
+
+    @Override
+    public Boolean updateTeacherInfo(TeacherDTO teacherDTO) {
+        Teacher teacher = teacherMapper.listById(teacherDTO.getId());
+        if (teacher == null) {
+            throw new BusinessException("不存在该教师");
+        }
+        boolean success = teacherMapper.updateTeacherInfo(teacherDTO) > 0;
+        if (!success) {
+            throw new RuntimeException("教师信息更新失败");
+        }
+        return true;
+    }
 }

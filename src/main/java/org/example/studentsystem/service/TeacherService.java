@@ -10,4 +10,6 @@ public interface TeacherService {
     TeacherDetailDTO getTeacherInfoById(Integer id, int pageNum, int pageSize);
 
     Boolean insertTeacherInfo(TeacherDTO teacherDTO);
+
+    Boolean updateTeacherInfo(TeacherDTO teacherDTO);
 }
