@@ -678,3 +678,1380 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 }
 ══════════════════════════════════════════════════════════════
 
+2026-09-02 10:00:29.588 [http-nio-8081-exec-3] [b1a845e74f074422] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/insert
+    traceId : b1a845e74f074422
+    client  : 127.0.0.1
+    handler : StudentController.insert
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "84635cb9-c56a-4853-aba9-3a4c971c9ba8",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "113"
+}
+    args    : [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 7,
+  "math" : 100,
+  "name" : "学生7",
+  "teacherId" : 2
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:00:29.588 [http-nio-8081-exec-3] [b1a845e74f074422] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.insert
+        args :
+    [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 7,
+  "math" : 100,
+  "name" : "学生7",
+  "teacherId" : 2
+} ]
+
+2026-09-02 10:00:29.589 [http-nio-8081-exec-3] [b1a845e74f074422] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 10:00:29.589 [http-nio-8081-exec-3] [b1a845e74f074422] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 7(Integer)
+2026-09-02 10:00:29.590 [http-nio-8081-exec-3] [b1a845e74f074422] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 0
+2026-09-02 10:00:29.591 [http-nio-8081-exec-3] [b1a845e74f074422] DEBUG o.e.s.mapper.StudentMapper.insert - ==>  Preparing: INSERT INTO student (id, name, age, gender, chinese, math, english, teacher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-02 10:00:29.592 [http-nio-8081-exec-3] [b1a845e74f074422] DEBUG o.e.s.mapper.StudentMapper.insert - ==> Parameters: 7(Integer), 学生7(String), 18(Integer), 女(String), 100(Integer), 100(Integer), 100(Integer), 2(Integer)
+2026-09-02 10:00:29.594 [http-nio-8081-exec-3] [b1a845e74f074422] DEBUG o.e.s.mapper.StudentMapper.insert - <==    Updates: 1
+2026-09-02 10:00:29.595 [http-nio-8081-exec-3] [b1a845e74f074422] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.insert | 6ms
+        result :
+    true
+
+2026-09-02 10:00:29.595 [http-nio-8081-exec-3] [b1a845e74f074422] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.insert | 8ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:00:41.026 [http-nio-8081-exec-4] [0d6539588ab84968] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/insert
+    traceId : 0d6539588ab84968
+    client  : 127.0.0.1
+    handler : StudentController.insert
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "4b9fb30b-63ea-4260-b281-ae2eaaeba750",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "113"
+}
+    args    : [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 8,
+  "math" : 100,
+  "name" : "学生8",
+  "teacherId" : 2
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:00:41.027 [http-nio-8081-exec-4] [0d6539588ab84968] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.insert
+        args :
+    [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 8,
+  "math" : 100,
+  "name" : "学生8",
+  "teacherId" : 2
+} ]
+
+2026-09-02 10:00:41.028 [http-nio-8081-exec-4] [0d6539588ab84968] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 10:00:41.029 [http-nio-8081-exec-4] [0d6539588ab84968] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 8(Integer)
+2026-09-02 10:00:41.031 [http-nio-8081-exec-4] [0d6539588ab84968] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 0
+2026-09-02 10:00:41.032 [http-nio-8081-exec-4] [0d6539588ab84968] DEBUG o.e.s.mapper.StudentMapper.insert - ==>  Preparing: INSERT INTO student (id, name, age, gender, chinese, math, english, teacher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-02 10:00:41.033 [http-nio-8081-exec-4] [0d6539588ab84968] DEBUG o.e.s.mapper.StudentMapper.insert - ==> Parameters: 8(Integer), 学生8(String), 18(Integer), 女(String), 100(Integer), 100(Integer), 100(Integer), 2(Integer)
+2026-09-02 10:00:41.036 [http-nio-8081-exec-4] [0d6539588ab84968] DEBUG o.e.s.mapper.StudentMapper.insert - <==    Updates: 1
+2026-09-02 10:00:41.036 [http-nio-8081-exec-4] [0d6539588ab84968] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.insert | 10ms
+        result :
+    true
+
+2026-09-02 10:00:41.037 [http-nio-8081-exec-4] [0d6539588ab84968] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.insert | 11ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:00:58.486 [http-nio-8081-exec-5] [60c6d785dac1481e] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/insert
+    traceId : 60c6d785dac1481e
+    client  : 127.0.0.1
+    handler : StudentController.insert
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "42af97af-9bd8-4046-94a8-f66770a12f5d",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "111"
+}
+    args    : [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 9,
+  "math" : 100,
+  "name" : "学生9",
+  "teacherId" : 2
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:00:58.487 [http-nio-8081-exec-5] [60c6d785dac1481e] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.insert
+        args :
+    [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 9,
+  "math" : 100,
+  "name" : "学生9",
+  "teacherId" : 2
+} ]
+
+2026-09-02 10:00:58.488 [http-nio-8081-exec-5] [60c6d785dac1481e] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 10:00:58.489 [http-nio-8081-exec-5] [60c6d785dac1481e] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 9(Integer)
+2026-09-02 10:00:58.491 [http-nio-8081-exec-5] [60c6d785dac1481e] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 0
+2026-09-02 10:00:58.491 [http-nio-8081-exec-5] [60c6d785dac1481e] DEBUG o.e.s.mapper.StudentMapper.insert - ==>  Preparing: INSERT INTO student (id, name, age, gender, chinese, math, english, teacher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-02 10:00:58.492 [http-nio-8081-exec-5] [60c6d785dac1481e] DEBUG o.e.s.mapper.StudentMapper.insert - ==> Parameters: 9(Integer), 学生9(String), 18(Integer), 女(String), 100(Integer), 100(Integer), 100(Integer), 2(Integer)
+2026-09-02 10:00:58.495 [http-nio-8081-exec-5] [60c6d785dac1481e] DEBUG o.e.s.mapper.StudentMapper.insert - <==    Updates: 1
+2026-09-02 10:00:58.496 [http-nio-8081-exec-5] [60c6d785dac1481e] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.insert | 9ms
+        result :
+    true
+
+2026-09-02 10:00:58.496 [http-nio-8081-exec-5] [60c6d785dac1481e] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.insert | 10ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:01:12.498 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/insert
+    traceId : a014bd3eeeb94d3c
+    client  : 127.0.0.1
+    handler : StudentController.insert
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "ad45405d-424c-41a4-845d-35e83beb546c",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "113"
+}
+    args    : [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 10,
+  "math" : 100,
+  "name" : "学生10",
+  "teacherId" : 2
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:01:12.498 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.insert
+        args :
+    [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 10,
+  "math" : 100,
+  "name" : "学生10",
+  "teacherId" : 2
+} ]
+
+2026-09-02 10:01:12.500 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 10:01:12.500 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 10(Integer)
+2026-09-02 10:01:12.501 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 0
+2026-09-02 10:01:12.502 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] DEBUG o.e.s.mapper.StudentMapper.insert - ==>  Preparing: INSERT INTO student (id, name, age, gender, chinese, math, english, teacher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-02 10:01:12.503 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] DEBUG o.e.s.mapper.StudentMapper.insert - ==> Parameters: 10(Integer), 学生10(String), 18(Integer), 女(String), 100(Integer), 100(Integer), 100(Integer), 2(Integer)
+2026-09-02 10:01:12.506 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] DEBUG o.e.s.mapper.StudentMapper.insert - <==    Updates: 1
+2026-09-02 10:01:12.506 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.insert | 8ms
+        result :
+    true
+
+2026-09-02 10:01:12.506 [http-nio-8081-exec-6] [a014bd3eeeb94d3c] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.insert | 9ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:01:53.100 [http-nio-8081-exec-7] [ea0c360e8cd246bf] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=1&pageNum=1&pageSize=3
+    traceId : ea0c360e8cd246bf
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "d12b6432-543b-4911-87d8-3e7759fc77fd",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ 1, 1, 3 ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:01:53.102 [http-nio-8081-exec-7] [ea0c360e8cd246bf] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById
+        args :
+    [ 1, 1, 3 ]
+
+2026-09-02 10:01:53.104 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-09-02 10:01:53.104 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 1(Integer)
+2026-09-02 10:01:53.107 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-09-02 10:01:53.151 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-09-02 10:01:53.151 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 1(Integer)
+2026-09-02 10:01:53.154 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-09-02 10:01:53.155 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?
+2026-09-02 10:01:53.156 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 1(Integer), 3(Integer)
+2026-09-02 10:01:53.157 [http-nio-8081-exec-7] [ea0c360e8cd246bf] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 3
+2026-09-02 10:01:53.160 [http-nio-8081-exec-7] [ea0c360e8cd246bf] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 55ms
+        result :
+    {
+  "age" : 30,
+  "gender" : "男",
+  "id" : 1,
+  "name" : "张三",
+  "pageNum" : 1,
+  "pageSize" : 3,
+  "pages" : 2,
+  "students" : [ {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 1,
+    "math" : 100,
+    "name" : "学生1",
+    "teacherId" : 1
+  }, {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 2,
+    "math" : 100,
+    "name" : "学生2",
+    "teacherId" : 1
+  }, {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 3,
+    "math" : 100,
+    "name" : "学生3",
+    "teacherId" : 1
+  } ],
+  "total" : 6
+}
+
+2026-09-02 10:01:53.160 [http-nio-8081-exec-7] [ea0c360e8cd246bf] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 60ms
+    result :
+{
+  "code" : 200,
+  "content" : {
+    "age" : 30,
+    "gender" : "男",
+    "id" : 1,
+    "name" : "张三",
+    "pageNum" : 1,
+    "pageSize" : 3,
+    "pages" : 2,
+    "students" : [ {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 1,
+      "math" : 100,
+      "name" : "学生1",
+      "teacherId" : 1
+    }, {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 2,
+      "math" : 100,
+      "name" : "学生2",
+      "teacherId" : 1
+    }, {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 3,
+      "math" : 100,
+      "name" : "学生3",
+      "teacherId" : 1
+    } ],
+    "total" : 6
+  },
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:02.731 [http-nio-8081-exec-8] [1140b1e1e80241c2] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=2&pageNum=1&pageSize=3
+    traceId : 1140b1e1e80241c2
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "2383df4d-0ae9-477c-9b90-16d250d3f6ff",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ 2, 1, 3 ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:02.732 [http-nio-8081-exec-8] [1140b1e1e80241c2] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById
+        args :
+    [ 2, 1, 3 ]
+
+2026-09-02 10:02:02.733 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-09-02 10:02:02.733 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 2(Integer)
+2026-09-02 10:02:02.734 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-09-02 10:02:02.739 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-09-02 10:02:02.740 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 2(Integer)
+2026-09-02 10:02:02.741 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-09-02 10:02:02.742 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?
+2026-09-02 10:02:02.743 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 2(Integer), 3(Integer)
+2026-09-02 10:02:02.745 [http-nio-8081-exec-8] [1140b1e1e80241c2] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 3
+2026-09-02 10:02:02.746 [http-nio-8081-exec-8] [1140b1e1e80241c2] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 14ms
+        result :
+    {
+  "age" : 28,
+  "gender" : "女",
+  "id" : 2,
+  "name" : "李四",
+  "pageNum" : 1,
+  "pageSize" : 3,
+  "pages" : 2,
+  "students" : [ {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 7,
+    "math" : 100,
+    "name" : "学生7",
+    "teacherId" : 2
+  }, {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 8,
+    "math" : 100,
+    "name" : "学生8",
+    "teacherId" : 2
+  }, {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 9,
+    "math" : 100,
+    "name" : "学生9",
+    "teacherId" : 2
+  } ],
+  "total" : 4
+}
+
+2026-09-02 10:02:02.747 [http-nio-8081-exec-8] [1140b1e1e80241c2] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 16ms
+    result :
+{
+  "code" : 200,
+  "content" : {
+    "age" : 28,
+    "gender" : "女",
+    "id" : 2,
+    "name" : "李四",
+    "pageNum" : 1,
+    "pageSize" : 3,
+    "pages" : 2,
+    "students" : [ {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 7,
+      "math" : 100,
+      "name" : "学生7",
+      "teacherId" : 2
+    }, {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 8,
+      "math" : 100,
+      "name" : "学生8",
+      "teacherId" : 2
+    }, {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 9,
+      "math" : 100,
+      "name" : "学生9",
+      "teacherId" : 2
+    } ],
+    "total" : 4
+  },
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:12.562 [http-nio-8081-exec-9] [3b7514463db64bbb] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 GET /teacher/infoById?id=2&pageNum=2&pageSize=3
+    traceId : 3b7514463db64bbb
+    client  : 127.0.0.1
+    handler : TeacherController.getTeacherInfoById
+    headers : {
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "562fa086-eb16-4b76-abbb-9f1918e01556",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive"
+}
+    args    : [ 2, 2, 3 ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:12.563 [http-nio-8081-exec-9] [3b7514463db64bbb] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 TeacherServiceImpl.getTeacherInfoById
+        args :
+    [ 2, 2, 3 ]
+
+2026-09-02 10:02:12.564 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.mapper.TeacherMapper.listById - ==>  Preparing: SELECT id, name, age, gender FROM teacher WHERE id = ? ORDER BY id
+2026-09-02 10:02:12.564 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.mapper.TeacherMapper.listById - ==> Parameters: 2(Integer)
+2026-09-02 10:02:12.565 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.mapper.TeacherMapper.listById - <==      Total: 1
+2026-09-02 10:02:12.570 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==>  Preparing: SELECT count(0) FROM student WHERE teacher_id = ?
+2026-09-02 10:02:12.570 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.m.S.listByTeacherId_COUNT - ==> Parameters: 2(Integer)
+2026-09-02 10:02:12.572 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.m.S.listByTeacherId_COUNT - <==      Total: 1
+2026-09-02 10:02:12.573 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.m.S.listByTeacherId - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE teacher_id = ? ORDER BY id LIMIT ?, ?
+2026-09-02 10:02:12.575 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.m.S.listByTeacherId - ==> Parameters: 2(Integer), 3(Long), 3(Integer)
+2026-09-02 10:02:12.577 [http-nio-8081-exec-9] [3b7514463db64bbb] DEBUG o.e.s.m.S.listByTeacherId - <==      Total: 1
+2026-09-02 10:02:12.578 [http-nio-8081-exec-9] [3b7514463db64bbb] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 TeacherServiceImpl.getTeacherInfoById | 14ms
+        result :
+    {
+  "age" : 28,
+  "gender" : "女",
+  "id" : 2,
+  "name" : "李四",
+  "pageNum" : 2,
+  "pageSize" : 3,
+  "pages" : 2,
+  "students" : [ {
+    "age" : 18,
+    "chinese" : 100,
+    "english" : 100,
+    "gender" : "女",
+    "id" : 10,
+    "math" : 100,
+    "name" : "学生10",
+    "teacherId" : 2
+  } ],
+  "total" : 4
+}
+
+2026-09-02 10:02:12.578 [http-nio-8081-exec-9] [3b7514463db64bbb] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 TeacherController.getTeacherInfoById | 17ms
+    result :
+{
+  "code" : 200,
+  "content" : {
+    "age" : 28,
+    "gender" : "女",
+    "id" : 2,
+    "name" : "李四",
+    "pageNum" : 2,
+    "pageSize" : 3,
+    "pages" : 2,
+    "students" : [ {
+      "age" : 18,
+      "chinese" : 100,
+      "english" : 100,
+      "gender" : "女",
+      "id" : 10,
+      "math" : 100,
+      "name" : "学生10",
+      "teacherId" : 2
+    } ],
+    "total" : 4
+  },
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:50.602 [http-nio-8081-exec-10] [939402c4ced74e0b] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/insert
+    traceId : 939402c4ced74e0b
+    client  : 127.0.0.1
+    handler : StudentController.insert
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "d992037e-6f97-481e-b98e-88fca03f9e72",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "113"
+}
+    args    : [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 11,
+  "math" : 100,
+  "name" : "学生10",
+  "teacherId" : 3
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:50.603 [http-nio-8081-exec-10] [939402c4ced74e0b] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.insert
+        args :
+    [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 11,
+  "math" : 100,
+  "name" : "学生10",
+  "teacherId" : 3
+} ]
+
+2026-09-02 10:02:50.604 [http-nio-8081-exec-10] [939402c4ced74e0b] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 10:02:50.605 [http-nio-8081-exec-10] [939402c4ced74e0b] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 11(Integer)
+2026-09-02 10:02:50.607 [http-nio-8081-exec-10] [939402c4ced74e0b] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 0
+2026-09-02 10:02:50.608 [http-nio-8081-exec-10] [939402c4ced74e0b] DEBUG o.e.s.mapper.StudentMapper.insert - ==>  Preparing: INSERT INTO student (id, name, age, gender, chinese, math, english, teacher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-02 10:02:50.609 [http-nio-8081-exec-10] [939402c4ced74e0b] DEBUG o.e.s.mapper.StudentMapper.insert - ==> Parameters: 11(Integer), 学生10(String), 18(Integer), 女(String), 100(Integer), 100(Integer), 100(Integer), 3(Integer)
+2026-09-02 10:02:50.611 [http-nio-8081-exec-10] [939402c4ced74e0b] DEBUG o.e.s.mapper.StudentMapper.insert - <==    Updates: 1
+2026-09-02 10:02:50.611 [http-nio-8081-exec-10] [939402c4ced74e0b] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.insert | 8ms
+        result :
+    true
+
+2026-09-02 10:02:50.612 [http-nio-8081-exec-10] [939402c4ced74e0b] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.insert | 10ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:59.279 [http-nio-8081-exec-2] [39b9ff31a07843a1] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/insert
+    traceId : 39b9ff31a07843a1
+    client  : 127.0.0.1
+    handler : StudentController.insert
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "2203ce21-26ec-4fb8-88b3-a21592829622",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "113"
+}
+    args    : [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 12,
+  "math" : 100,
+  "name" : "学生12",
+  "teacherId" : 3
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 10:02:59.280 [http-nio-8081-exec-2] [39b9ff31a07843a1] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.insert
+        args :
+    [ {
+  "age" : 18,
+  "chinese" : 100,
+  "english" : 100,
+  "gender" : "女",
+  "id" : 12,
+  "math" : 100,
+  "name" : "学生12",
+  "teacherId" : 3
+} ]
+
+2026-09-02 10:02:59.281 [http-nio-8081-exec-2] [39b9ff31a07843a1] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 10:02:59.282 [http-nio-8081-exec-2] [39b9ff31a07843a1] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 12(Integer)
+2026-09-02 10:02:59.284 [http-nio-8081-exec-2] [39b9ff31a07843a1] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 0
+2026-09-02 10:02:59.285 [http-nio-8081-exec-2] [39b9ff31a07843a1] DEBUG o.e.s.mapper.StudentMapper.insert - ==>  Preparing: INSERT INTO student (id, name, age, gender, chinese, math, english, teacher_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-02 10:02:59.286 [http-nio-8081-exec-2] [39b9ff31a07843a1] DEBUG o.e.s.mapper.StudentMapper.insert - ==> Parameters: 12(Integer), 学生12(String), 18(Integer), 女(String), 100(Integer), 100(Integer), 100(Integer), 3(Integer)
+2026-09-02 10:02:59.290 [http-nio-8081-exec-2] [39b9ff31a07843a1] DEBUG o.e.s.mapper.StudentMapper.insert - <==    Updates: 1
+2026-09-02 10:02:59.290 [http-nio-8081-exec-2] [39b9ff31a07843a1] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.insert | 10ms
+        result :
+    true
+
+2026-09-02 10:02:59.291 [http-nio-8081-exec-2] [39b9ff31a07843a1] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.insert | 12ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 11:11:07.405 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-02 11:11:07.411 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-02 11:11:07.413 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-02 11:11:07.414 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-02 11:11:08.935 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 26 with PID 6239 (/Users/hepan/Desktop/java/target/classes started by hepan in /Users/hepan/Desktop/java)
+2026-09-02 11:11:08.936 [main] [] INFO  o.e.s.StudentSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-02 11:11:09.004 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-09-02 11:11:09.161 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-09-02 11:11:09.351 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-02 11:11:09.355 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-09-02 11:11:09.356 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-02 11:11:09.356 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-09-02 11:11:09.370 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 418 ms
+2026-09-02 11:11:09.650 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-09-02 11:11:09.655 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-02 11:11:09.657 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 0.914 seconds (process running for 1.062)
+2026-09-02 11:11:14.971 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-02 11:11:14.972 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-02 11:11:14.973 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-02 11:11:15.029 [http-nio-8081-exec-1] [8a8508639f744521] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/update
+    traceId : 8a8508639f744521
+    client  : 127.0.0.1
+    handler : StudentController.update
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "5d6bb241-27ec-4800-a878-61b3bcf80f88",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "28"
+}
+    args    : [ {
+  "age" : null,
+  "chinese" : null,
+  "english" : null,
+  "gender" : null,
+  "id" : 11,
+  "math" : null,
+  "name" : "学生11",
+  "teacherId" : null
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 11:11:15.029 [http-nio-8081-exec-1] [8a8508639f744521] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.update
+        args :
+    [ {
+  "age" : null,
+  "chinese" : null,
+  "english" : null,
+  "gender" : null,
+  "id" : 11,
+  "math" : null,
+  "name" : "学生11",
+  "teacherId" : null
+} ]
+
+2026-09-02 11:11:15.036 [http-nio-8081-exec-1] [8a8508639f744521] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-02 11:11:15.092 [http-nio-8081-exec-1] [8a8508639f744521] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@495f5108
+2026-09-02 11:11:15.092 [http-nio-8081-exec-1] [8a8508639f744521] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-02 11:11:15.095 [http-nio-8081-exec-1] [8a8508639f744521] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 11:11:15.103 [http-nio-8081-exec-1] [8a8508639f744521] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 11(Integer)
+2026-09-02 11:11:15.113 [http-nio-8081-exec-1] [8a8508639f744521] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 1
+2026-09-02 11:11:15.114 [http-nio-8081-exec-1] [8a8508639f744521] DEBUG o.e.s.mapper.StudentMapper.update - ==>  Preparing: 
+2026-09-02 11:11:15.150 [http-nio-8081-exec-1] [8a8508639f744521] WARN  o.e.s.aspect.ServiceLogAspect -     ✖ 【Service 异常】 StudentServiceImpl.update | 120ms
+        error :
+    "\n### Error updating database.  Cause: java.sql.SQLException: SQL String cannot be empty\n### The error may exist in org/example/studentsystem/mapper/StudentMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.StudentMapper.update\n### The error occurred while executing an update\n### SQL: \n### Cause: java.sql.SQLException: SQL String cannot be empty\n; SQL String cannot be empty"
+
+org.springframework.dao.TransientDataAccessResourceException: 
+### Error updating database.  Cause: java.sql.SQLException: SQL String cannot be empty
+### The error may exist in org/example/studentsystem/mapper/StudentMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.StudentMapper.update
+### The error occurred while executing an update
+### SQL: 
+### Cause: java.sql.SQLException: SQL String cannot be empty
+; SQL String cannot be empty
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:155)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy77.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:249)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy85.update(Unknown Source)
+	at org.example.studentsystem.service.impl.StudentServiceImpl.update(StudentServiceImpl.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.StudentServiceImpl$$SpringCGLIB$$0.update(<generated>)
+	at org.example.studentsystem.controller.StudentController.update(StudentController.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.StudentController$$SpringCGLIB$$0.update(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.sql.SQLException: SQL String cannot be empty
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:65)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:77)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:215)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:189)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getInstance(ClientPreparedStatement.java:130)
+	at com.mysql.cj.jdbc.ConnectionImpl.clientPrepareStatement(ConnectionImpl.java:674)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1663)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1574)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:328)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:53)
+	at jdk.proxy3/jdk.proxy3.$Proxy93.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:90)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:60)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:90)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy92.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 87 common frames omitted
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: SQL String cannot be empty
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:76)
+	at com.mysql.cj.ClientPreparedQuery.checkNullOrEmptyQuery(ClientPreparedQuery.java:147)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:211)
+	... 113 common frames omitted
+2026-09-02 11:11:15.151 [http-nio-8081-exec-1] [8a8508639f744521] ERROR o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+✖ 【API 系统异常】 StudentController.update | 133ms
+    error :
+"\n### Error updating database.  Cause: java.sql.SQLException: SQL String cannot be empty\n### The error may exist in org/example/studentsystem/mapper/StudentMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.StudentMapper.update\n### The error occurred while executing an update\n### SQL: \n### Cause: java.sql.SQLException: SQL String cannot be empty\n; SQL String cannot be empty"
+══════════════════════════════════════════════════════════════
+
+org.springframework.dao.TransientDataAccessResourceException: 
+### Error updating database.  Cause: java.sql.SQLException: SQL String cannot be empty
+### The error may exist in org/example/studentsystem/mapper/StudentMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.StudentMapper.update
+### The error occurred while executing an update
+### SQL: 
+### Cause: java.sql.SQLException: SQL String cannot be empty
+; SQL String cannot be empty
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:155)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy77.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:249)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy85.update(Unknown Source)
+	at org.example.studentsystem.service.impl.StudentServiceImpl.update(StudentServiceImpl.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.StudentServiceImpl$$SpringCGLIB$$0.update(<generated>)
+	at org.example.studentsystem.controller.StudentController.update(StudentController.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.StudentController$$SpringCGLIB$$0.update(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.sql.SQLException: SQL String cannot be empty
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:65)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:77)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:215)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:189)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getInstance(ClientPreparedStatement.java:130)
+	at com.mysql.cj.jdbc.ConnectionImpl.clientPrepareStatement(ConnectionImpl.java:674)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1663)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1574)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:328)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:53)
+	at jdk.proxy3/jdk.proxy3.$Proxy93.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:90)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:60)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:90)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy92.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 87 common frames omitted
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: SQL String cannot be empty
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:76)
+	at com.mysql.cj.ClientPreparedQuery.checkNullOrEmptyQuery(ClientPreparedQuery.java:147)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:211)
+	... 113 common frames omitted
+2026-09-02 11:11:15.153 [http-nio-8081-exec-1] [8a8508639f744521] ERROR o.e.s.common.GlobalExceptionHandler - 
+══════════════════════════════════════════════════════════════
+✖ 【系统异常】 traceId=8a8508639f744521
+    detail :
+"\n### Error updating database.  Cause: java.sql.SQLException: SQL String cannot be empty\n### The error may exist in org/example/studentsystem/mapper/StudentMapper.java (best guess)\n### The error may involve org.example.studentsystem.mapper.StudentMapper.update\n### The error occurred while executing an update\n### SQL: \n### Cause: java.sql.SQLException: SQL String cannot be empty\n; SQL String cannot be empty"
+══════════════════════════════════════════════════════════════
+
+org.springframework.dao.TransientDataAccessResourceException: 
+### Error updating database.  Cause: java.sql.SQLException: SQL String cannot be empty
+### The error may exist in org/example/studentsystem/mapper/StudentMapper.java (best guess)
+### The error may involve org.example.studentsystem.mapper.StudentMapper.update
+### The error occurred while executing an update
+### SQL: 
+### Cause: java.sql.SQLException: SQL String cannot be empty
+; SQL String cannot be empty
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:155)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy77.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:249)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy85.update(Unknown Source)
+	at org.example.studentsystem.service.impl.StudentServiceImpl.update(StudentServiceImpl.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.ServiceLogAspect.around(ServiceLogAspect.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.service.impl.StudentServiceImpl$$SpringCGLIB$$0.update(<generated>)
+	at org.example.studentsystem.controller.StudentController.update(StudentController.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at org.example.studentsystem.aspect.WebLogAspect.around(WebLogAspect.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at org.example.studentsystem.controller.StudentController$$SpringCGLIB$$0.update(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.example.studentsystem.filter.TraceFilter.doFilter(TraceFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.sql.SQLException: SQL String cannot be empty
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:65)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:77)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:215)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:189)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getInstance(ClientPreparedStatement.java:130)
+	at com.mysql.cj.jdbc.ConnectionImpl.clientPrepareStatement(ConnectionImpl.java:674)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1663)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1574)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:328)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:53)
+	at jdk.proxy3/jdk.proxy3.$Proxy93.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:90)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:60)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:90)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy92.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 87 common frames omitted
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: SQL String cannot be empty
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:76)
+	at com.mysql.cj.ClientPreparedQuery.checkNullOrEmptyQuery(ClientPreparedQuery.java:147)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:211)
+	... 113 common frames omitted
+2026-09-02 11:14:07.527 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-02 11:14:07.530 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-02 11:14:07.531 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-02 11:14:07.534 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-02 11:14:08.780 [main] [] INFO  o.e.s.StudentSystemApplication - Starting StudentSystemApplication using Java 26 with PID 6499 (/Users/hepan/Desktop/java/target/classes started by hepan in /Users/hepan/Desktop/java)
+2026-09-02 11:14:08.781 [main] [] INFO  o.e.s.StudentSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-02 11:14:08.842 [background-preinit] [] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-09-02 11:14:08.980 [main] [] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2026-09-02 11:14:09.166 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-02 11:14:09.170 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-09-02 11:14:09.171 [main] [] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-02 11:14:09.171 [main] [] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-09-02 11:14:09.185 [main] [] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 389 ms
+2026-09-02 11:14:09.449 [main] [] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-09-02 11:14:09.453 [main] [] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-02 11:14:09.455 [main] [] INFO  o.e.s.StudentSystemApplication - Started StudentSystemApplication in 0.847 seconds (process running for 0.975)
+2026-09-02 11:14:14.734 [http-nio-8081-exec-1] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-02 11:14:14.734 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-02 11:14:14.735 [http-nio-8081-exec-1] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-02 11:14:14.780 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/update
+    traceId : c81ac70333e14ed3
+    client  : 127.0.0.1
+    handler : StudentController.update
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "e7772786-752c-4612-9c2f-1fec4865a1b8",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "28"
+}
+    args    : [ {
+  "age" : null,
+  "chinese" : null,
+  "english" : null,
+  "gender" : null,
+  "id" : 11,
+  "math" : null,
+  "name" : "学生11",
+  "teacherId" : null
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 11:14:14.780 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.update
+        args :
+    [ {
+  "age" : null,
+  "chinese" : null,
+  "english" : null,
+  "gender" : null,
+  "id" : 11,
+  "math" : null,
+  "name" : "学生11",
+  "teacherId" : null
+} ]
+
+2026-09-02 11:14:14.786 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-02 11:14:14.837 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@628bca50
+2026-09-02 11:14:14.838 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-02 11:14:14.840 [http-nio-8081-exec-1] [c81ac70333e14ed3] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 11:14:14.848 [http-nio-8081-exec-1] [c81ac70333e14ed3] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 11(Integer)
+2026-09-02 11:14:14.856 [http-nio-8081-exec-1] [c81ac70333e14ed3] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 1
+2026-09-02 11:14:14.869 [http-nio-8081-exec-1] [c81ac70333e14ed3] DEBUG o.e.s.mapper.StudentMapper.update - ==>  Preparing: UPDATE student SET name = ? WHERE id = ?
+2026-09-02 11:14:14.870 [http-nio-8081-exec-1] [c81ac70333e14ed3] DEBUG o.e.s.mapper.StudentMapper.update - ==> Parameters: 学生11(String), 11(Integer)
+2026-09-02 11:14:14.874 [http-nio-8081-exec-1] [c81ac70333e14ed3] DEBUG o.e.s.mapper.StudentMapper.update - <==    Updates: 1
+2026-09-02 11:14:14.874 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.update | 94ms
+        result :
+    true
+
+2026-09-02 11:14:14.875 [http-nio-8081-exec-1] [c81ac70333e14ed3] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.update | 104ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 11:43:44.467 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m29s375ms).
+2026-09-02 12:01:16.047 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m1s473ms).
+2026-09-02 12:18:53.178 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m37s131ms).
+2026-09-02 12:37:05.529 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m42s324ms).
+2026-09-02 12:38:44.545 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s991ms).
+2026-09-02 12:42:12.802 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s149ms).
+2026-09-02 12:59:38.404 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m55s593ms).
+2026-09-02 13:04:09.221 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m30s817ms).
+2026-09-02 14:03:10.525 [http-nio-8081-exec-3] [2dadf0974c3845de] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+>>> 【API 请求】 POST /student/update
+    traceId : 2dadf0974c3845de
+    client  : 127.0.0.1
+    handler : StudentController.update
+    headers : {
+  "Content-Type" : "application/json",
+  "User-Agent" : "PostmanRuntime/7.54.0",
+  "Accept" : "*/*",
+  "Postman-Token" : "2fdd9584-e16c-4198-8ff6-6e793fd7cfc2",
+  "Host" : "127.0.0.1:8081",
+  "Accept-Encoding" : "gzip, deflate, br",
+  "Connection" : "keep-alive",
+  "Content-Length" : "28"
+}
+    args    : [ {
+  "age" : null,
+  "chinese" : null,
+  "english" : null,
+  "gender" : null,
+  "id" : 11,
+  "math" : null,
+  "name" : "学生11",
+  "teacherId" : null
+} ]
+══════════════════════════════════════════════════════════════
+
+2026-09-02 14:03:10.526 [http-nio-8081-exec-3] [2dadf0974c3845de] INFO  o.e.s.aspect.ServiceLogAspect -     ▶ 【Service 进入】 StudentServiceImpl.update
+        args :
+    [ {
+  "age" : null,
+  "chinese" : null,
+  "english" : null,
+  "gender" : null,
+  "id" : 11,
+  "math" : null,
+  "name" : "学生11",
+  "teacherId" : null
+} ]
+
+2026-09-02 14:03:10.527 [http-nio-8081-exec-3] [2dadf0974c3845de] DEBUG o.e.s.mapper.StudentMapper.getById - ==>  Preparing: SELECT id, name, age, gender, chinese, math, english, teacher_id AS teacherId FROM student WHERE id = ? ORDER BY id
+2026-09-02 14:03:10.528 [http-nio-8081-exec-3] [2dadf0974c3845de] DEBUG o.e.s.mapper.StudentMapper.getById - ==> Parameters: 11(Integer)
+2026-09-02 14:03:10.534 [http-nio-8081-exec-3] [2dadf0974c3845de] DEBUG o.e.s.mapper.StudentMapper.getById - <==      Total: 1
+2026-09-02 14:03:10.536 [http-nio-8081-exec-3] [2dadf0974c3845de] DEBUG o.e.s.mapper.StudentMapper.update - ==>  Preparing: UPDATE student SET name = ? WHERE id = ?
+2026-09-02 14:03:10.537 [http-nio-8081-exec-3] [2dadf0974c3845de] DEBUG o.e.s.mapper.StudentMapper.update - ==> Parameters: 学生11(String), 11(Integer)
+2026-09-02 14:03:10.539 [http-nio-8081-exec-3] [2dadf0974c3845de] DEBUG o.e.s.mapper.StudentMapper.update - <==    Updates: 1
+2026-09-02 14:03:10.540 [http-nio-8081-exec-3] [2dadf0974c3845de] INFO  o.e.s.aspect.ServiceLogAspect -     ◀ 【Service 完成】 StudentServiceImpl.update | 14ms
+        result :
+    true
+
+2026-09-02 14:03:10.540 [http-nio-8081-exec-3] [2dadf0974c3845de] INFO  o.e.s.aspect.WebLogAspect - 
+══════════════════════════════════════════════════════════════
+<<< 【API 响应】 StudentController.update | 16ms
+    result :
+{
+  "code" : 200,
+  "content" : true,
+  "message" : "success"
+}
+══════════════════════════════════════════════════════════════
+
+2026-09-02 14:55:40.033 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s862ms), soft-evicting connections from pool.
+2026-09-02 17:45:09.473 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57s734ms).
+2026-09-02 18:00:29.433 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m19s960ms).
+2026-09-02 18:17:14.332 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m14s915ms).
+2026-09-02 18:34:34.806 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m50s466ms).
+2026-09-02 18:38:41.869 [HikariPool-1:housekeeper] [] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m37s55ms).
+2026-09-02 20:45:35.238 [SpringApplicationShutdownHook] [] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-02 20:45:35.242 [tomcat-shutdown] [] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-02 20:45:35.244 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-02 20:45:35.245 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

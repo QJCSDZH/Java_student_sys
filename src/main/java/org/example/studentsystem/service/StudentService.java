@@ -9,4 +9,5 @@ public interface StudentService {
     List<Student> getStudentsByName(String name);
     Student getById(int id);
     Boolean insert(StudentDTO studentDTO);
+    Boolean update(StudentDTO studentDTO);
 }

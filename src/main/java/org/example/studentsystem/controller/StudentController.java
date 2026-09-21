@@ -41,4 +41,12 @@ public class StudentController {
     public PHResult<Boolean> insert(@RequestBody StudentDTO studentDTO) {
         return PHResult.success(studentService.insert(studentDTO));
     }
+
+
+    // 修改学生信息
+    // http://127.0.0.1:8081/student/update
+    @PostMapping("update")
+    public PHResult<Boolean> update(@RequestBody StudentDTO studentDTO) {
+        return PHResult.success(studentService.update(studentDTO));
+    }
 }

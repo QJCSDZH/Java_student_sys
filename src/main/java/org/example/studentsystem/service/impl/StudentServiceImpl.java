@@ -14,6 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
+    
     private final StudentMapper studentMapper;
 
     @Override
@@ -33,5 +34,15 @@ public class StudentServiceImpl implements StudentService {
             throw new BusinessException("已存在该学生");
         }
         return studentMapper.insert(studentDTO) > 0;
+    }
+
+
+    @Override
+    public Boolean update(StudentDTO studentDTO) {
+        Student student = studentMapper.getById(studentDTO.getId());
+        if (student == null) {
+            throw new BusinessException("没有查询到该学生");
+        }
+        return studentMapper.update(studentDTO) > 0;
     }
 }
